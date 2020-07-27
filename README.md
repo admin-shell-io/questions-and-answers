@@ -5,7 +5,6 @@
 Links to websites shall be entered as File object (physical reference). ReferenceElement  objects represent logical references.
 A typical usage for logical references is in the description of a topology of the asset or „consist of” hierarchies.
 
-
 **If the same properties are use in several submodels, shall they also be entered several times or shall they be referenced?**
 
 Submodels shall be as independent as possible so that they can be changed and developed separately.
