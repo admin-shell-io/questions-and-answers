@@ -1,4 +1,4 @@
-# Question-and-Answers
+# Questions-and-Answers
 
 **How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?**
 
