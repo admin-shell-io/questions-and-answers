@@ -33,7 +33,7 @@ Alternatively, an agile flexible approach using GITHUB has been defined. You may
 **How shall the eCl@ss group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?**
 
 Please use the submodel template based on VDI 2770 for documentation instead. It will be released soon.
-(Answered: 2020-08-13)
+(Updated: 2020-08-14)
 
 **How to treat values of Properties with values in multiple languages?**
 
