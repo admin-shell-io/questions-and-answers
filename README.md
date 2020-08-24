@@ -97,7 +97,7 @@ Serial number is a submodel element of “Identification” submodel referenced 
 (Answered: 2020-08-19)
 
 **How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?** <!-- ID: 27, 28 -->
-Map concepts to “admin-shell.io” namespace (see [custom identifier best practices](#id18)). Within the concept description itself use “sourceOfDefinition” or “isCaseOf” to link to “original” concept.
+Map concepts to “admin-shell.io” namespace (see [custom identifier best practices](#id18)). Within the concept description itself use “sourceOfDefinition” or “isCaseOf” to link to “original” concept. (Answered: 2020-08-24)
 
 
 # Essential AAS documents
