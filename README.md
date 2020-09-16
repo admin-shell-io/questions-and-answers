@@ -1,3 +1,5 @@
+This Q&A has been created by a Task Force of "ZVEI SG Modelle und Standards".
+
 # Questions-and-Answers
 
 **How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?** <!-- ID: 2 -->
