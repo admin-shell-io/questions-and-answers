@@ -136,9 +136,9 @@ In AAS Part 1 V2.0 semanticId(s) are mandatory for submodel elements and are rec
 **Can semantic ID(s) be used without defining a concept description within the AAS package?** <!-- ID: 41 -->
 
 Yes. Please use the following alternatives:
-•	type=ConceptDescription, local=True: the concept description is within the package or deployed on the same server like the element referring to it
-•	type=ConceptDescription, local=False: the concept description is located within a different pakckage or possibly deployed on a different server than the element referring to it
-•	type=GlobalReference, local=False: a concept description object is not defined, just a reference to an external source is made
+-	type=ConceptDescription, local=True: the concept description is within the package or deployed on the same server like the element referring to it
+-	type=ConceptDescription, local=False: the concept description is located within a different pakckage or possibly deployed on a different server than the element referring to it
+-	type=GlobalReference, local=False: a concept description object is not defined, just a reference to an external source is made
 (Answered: 2020-09-21)
 
 
