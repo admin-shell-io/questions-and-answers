@@ -102,6 +102,40 @@ Serial number is a submodel element of “Identification” submodel referenced 
 
 Map concepts to “admin-shell.io” namespace (see [custom identifier best practices](#id18)). Within the concept description itself use “sourceOfDefinition” or “isCaseOf” to link to “original” concept. (Answered: 2020-08-24)
 
+**How is the relation between idShort, shortName and preferredName for a submodel element and the related concept description?** <!-- ID: 30 -->
+
+If an English shortname is available in a related concept description, the English shortName shall be also used as idShort. If only a preferredName is available, that shall be translated to idShort, e.g. the preferredName “Maximum rotation speed” becomes translated to “maximumRotationSpeed”.
+In case a submodel template specification is used as a base, the idShort defined in this submodel template shall be used.
+
+Note: currently there is ongoing work on a “displayName” concept. When the according specification is completed, this question will also be updated.
+(Answered: 2020-09-21)
+
+**Where shall images (products or icons) of an asset be stored, e.g. for the use in dashboards?** <!-- ID: 31 -->
+
+Such images may be included in the “TechnicalData” submodel as File submodel elements. It is recommended to distinguish between product photos and functional icons. Product photos shall get the idShort = "productPicture", functional icons shall get the idShort = "functionalSymbol".
+
+**How shall properties be entered which are defined both in eCl@ss and in CDD?** <!-- ID: 34 -->
+
+If definitions for several product application areas are needed (e.g. eCL@ss for factory automation and CDD for process automation), the related properties (e.g. ManufacturerName) shall be entered twice. At each of the properties one of the concept descriptions (eCl@ss or CDD) is entered. The name of a property shall be either counted up (e.g. ManufactureName1) or extended by a suffix (e.g. ManufacturerNameCDD).
+
+Alternatively an own concept description may be defined and "isCaseOf" may be used, so that both IRDIs can be entered in the concept description.
+
+**Is the following IRI-based ID with a query parameter valid “http://vendor.com/suffx?a=abc&b=xyz”?** <!-- ID: 38 -->
+
+Yes, this is a valid ID.
+
+**Are semanticID(s) optional or mandatory?** <!-- ID: 40 -->
+
+SemanticIDs shall always be used for submodels and for submodelElements. Since idShort(s) or Submodel ID(s) may differ between assets and suppliers, only semanticID(s) can be identical. If semanticIDs are not available in eCl@ss or CDD, it is suggested to define an own semanticID as company specific or on GITHUB at admin-shell-io (https://github.com/admin-shell-io/id ).
+
+In AAS Part 1 V2.0 semanticId(s) are mandatory for submodel elements and are recommendeded for submodels with kind=Instance. For submodels with kind=Template the semanticId is optional.
+
+**Can semantic ID(s) be used without defining a concept description within the AAS package?** <!-- ID: 41 -->
+
+Yes. Please use the following alternatives:
+•	type=ConceptDescription, local=True: the concept description is within the package or deployed on the same server like the element referring to it
+•	type=ConceptDescription, local=False: the concept description is located within a different pakckage or possibly deployed on a different server than the element referring to it
+•	type=GlobalReference, local=False: a concept description object is not defined, just a reference to an external source is made
 
 # Essential AAS documents
 - Details of the AAS Part 1, Version 2.0.1 - https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
