@@ -91,13 +91,19 @@ Furthermore, in practical implementations we advise to “filter” out protocol
 -	http://www.admin-shell.io/some_id_example
 (Answered: 2020-08-19)
 
-**Which submodel shall contain the serial number of a device?** <!-- ID: 23 -->
+**Which submodel shall contain the serial number of a device?** <a name="id19"></a> <!-- ID: 23 -->
 
 Serial number is a submodel element of “Identification” submodel referenced in AAS for an asset with Type=Instance, i.e. instance’s AAS. 
 (Answered: 2020-08-19)
 
-**How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?** <!-- ID: 27, 28 -->
+**How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?** <a name="id20"></a> <!-- ID: 27, 28 -->
+
 Map concepts to “admin-shell.io” namespace (see [custom identifier best practices](#id18)). Within the concept description itself use “sourceOfDefinition” or “isCaseOf” to link to “original” concept. (Answered: 2020-08-24)
+
+**Is it allowed to have Submodel Templates and Submodel Instances in the same AAS?** <a name="id21"></a> 
+
+Although the specification does not restrict an Asset Administration Shell to contain both, Submodels with kind=Template and Submodels with kind=Instance it is good practice to separate Submodel Templates from Submodel Instances. Typically, the owners and the life cycle for creating and maintaining Submodel Templates are different from the owner and from creating and operating Submodel Instances. Submodel Templates guide the creation of Submodel Instances.
+(Answered: 2021-01-08)
 
 
 # Essential AAS documents
