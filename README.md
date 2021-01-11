@@ -148,6 +148,10 @@ Yes. Please use the following alternatives:
 -	type=GlobalReference, local=False: a concept description object is not defined, just a reference to an external source is made
 (Answered: 2020-09-21)
 
+**[Is it allowed to have both, Submodel Templates and Submodel Instances, in the same AAS?](#id42)** <a name="id42"></a> 
+
+Submodel Templates guide the creation of Submodel Instances. Although the specification does not restrict an Asset Administration Shell to contain both, Submodels with kind=Template and Submodels with kind=Instance, it is good practice to separate Submodel Templates from Submodel Instances. Typically, the owners of and the life cycle for creating and maintaining Submodel Templates are different from the owners of and from creating and operating Submodel Instances. 
+(Answered: 2021-01-08)
 
 **[How should I name a submodel element if there are more than one with the same semanticId?](#id43)** <a id="id43"></a>
 
