@@ -164,6 +164,23 @@ Note: It is requested that the idShort of a non-identifiable is unique in its na
 
 
 
+**[How to treat ECLASS Quantity Concept in AAS?](#id44)** <a id="id44"></a>
+
+Example why quantities are needed additionally to units to automatically check compatibility of two properties: The unit "Newstonmeter" can be linked to the quantity "torque" but also to the quantity "energy". Only if the quantity is the same a conversion of the property value is possible.
+
+The metamodel of the AAS (status: V3.0RC01) does not explicitly support the concept of quantities. This means, in case properties are not defined in ECLASS or in any other standardized dictionary it is not possible to specify the quantity of this proprietary property. In case the property is defined in ECLASS then the quantity is defined implicitly, because it is defined in ECLASS itself.
+
+Future versions of the AAS might support quantities:
+
+* by IRDI reference only in the concept description of a property (i.e. extending data specification DataSpecificationIEC61360)
+* by additinally providing a corresponding data specification template for quantities conformant to IEC61360
+
+Please be aware: the AAS does not support the concept of alternative units (as does IEC 61360 or ECLASS): it is assumed that the unit specified is also the unit that is used.
+
+In general: The aim of the Core AAS is not about defining semantics, it is about referencing concept descriptions. Support of corresponding data specifciations is optional anyway.
+
+(Answered 2021-01-11)
+
 
 ## Asset Administration Shell in Detail Series
 
