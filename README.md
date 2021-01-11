@@ -160,6 +160,8 @@ Note: It is requested that the idShort of a non-identifiable is unique in its na
 
 
 
-## Essential AAS documents
-- Details of the AAS Part 1, Version 2.0.1 - https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Details-of-the-Asset-Administration-Shell-Part1.html
+
+## Asset Administration Shell in Detail Series
+
+ [Overview over all parts and versions ](https://www.plattform-i40.de/PI40/Redaktion/EN/Standardartikel/specification-administrationshell.html)
 
