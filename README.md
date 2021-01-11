@@ -119,8 +119,11 @@ Note: currently there is ongoing work on a “displayName” concept. When the a
 
 **[Where shall images (products or icons) of an asset be stored, e.g. for the use in dashboards?](#id31)** <a id="id31"></a><!-- ID: 31 -->
 
-Such images may be included in the “TechnicalData” submodel as File submodel elements. It is recommended to distinguish between product photos and functional icons. Product photos shall get the idShort = "productPicture", functional icons shall get the idShort = "functionalSymbol".
-(Answered: 2020-09-21)
+With V3.0RC01 of Part 1 assetInformation/defaultThumbnail was introduced. The type of these thumbnails is "File".
+
+The standardized submodel template "Generic Frame for Technical Data for Industrial Equipment in Manufacturing" (Version 1.1) allows to add as many product images as needed (https://admin-shell.io/ZVEI/TechnicalData/Productimage/1/1). Again, the type of these images is "File".
+
+(Updated: 2021-01-11)
 
 **[How shall properties be entered which are defined both in eCl@ss and in CDD?](#id34)** <a id="id34"></a><!-- ID: 34 -->
 
