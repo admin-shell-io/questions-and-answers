@@ -162,8 +162,42 @@ Via display names (introduced in V3.0RC01 Referable/displayName, it is also poss
 
 Note: It is requested that the idShort of a non-identifiable is unique in its name space (for example in a Submodel or in a SubmodelElementCollection). This is not requested for the display names!
 
+**[How to reference an ECLASS application or classification class](#id45)** <a id="id45"></a>
+
+Referencing of application and classification classes is no different to referencing the ECLASS property definition.
+Since classification and application classes correspond to a set of properties they can be used to describe the semantics of a complete submodel or of an SubmodelElementCollection.
+
+Please be aware: to be completeley unambiguous it is either necessary to model the complete hierarchy in the submodel or by using a semanticId with more than one IRDI. The keys in the reference are ordered.
+
+Example: 
+
+* Application Class:        	0173-1#01-AAB572#006 Electric engineering, automation, process control engineering
+* Classification Level 1:  	 0173-1#01-AAB583#008 Electrical drive 
+* Classification Level 2:    0173-1#01-AJZ695#008 Servo motor 
+* Classification Level 3:  	 0173-1#01-AJZ696#015 Servo asynchronous motor
+
+For example the semanticId of a submodel containing the properties for the asynchronous servo motor without any further hierarchical modelling would be:
+
+   
+  <aas:semanticId>
+  
+    <aas:keys>
+    
+      <aas:key idType="IRDI" type="GlobalReference">0173-1#01-AAB572#006</aas:key> 
+      
+      <aas:key idType="IRDI" type="GlobalReference">0173-1#01-AAB583#008</aas:key>
+      
+      <aas:key idType="IRDI" type="GlobalReference">0173-1#01-AJZ695#008</aas:key>
+      
+      <aas:key idType="IRDI" type="GlobalReference">0173-1#01-AJZ696#015</aas:key>
+      
+    </aas:keys> 
+    
+  </aas:semanticId>
+    
 
 
+(Answered: 2021-01-11)
 
 ## Asset Administration Shell in Detail Series
 
