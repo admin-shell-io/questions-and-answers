@@ -109,13 +109,25 @@ Serial number is a submodel element of “Identification” submodel referenced 
 
 Map concepts to “admin-shell.io” namespace (see [custom identifier best practices](#id18)). Within the concept description itself use “sourceOfDefinition” or “isCaseOf” to link to “original” concept. (Answered: 2020-08-24)
 
-**[How is the relation between idShort, shortName and preferredName for a submodel element and the related concept description?](#id30)** <a id="id30"></a><!-- ID: 30 -->
+**[How is the relation between displayName, idShort, shortName and preferredName for a submodel element and the related concept description?](#id30)** <a id="id30"></a><!-- ID: 30 -->
 
-If an English shortname is available in a related concept description, the English shortName shall be also used as idShort. If only a preferredName is available, that shall be translated to idShort, e.g. the preferredName “Maximum rotation speed” becomes translated to “maximumRotationSpeed”.
-In case a submodel template specification is used as a base, the idShort defined in this submodel template shall be used.
+If no display name is defined in the language requested by the application, then the display name is selected in the following order if available:
+- the preferred name in the requested language of the concept description defining the semantics of the element
+- If there is a default language list defined in the application, then the corresponding preferred name in the language is chosen according to this order.
+- the English preferred name of the concept description defining the semantics of the element
+- the short name of the concept description
+- the idShort of the element
 
-Note: currently there is ongoing work on a “displayName” concept. When the according specification is completed, this question will also be updated.
-(Answered: 2020-09-21)
+Note: DisplayName was introduced with Part 1, V3.0RC01. Display name is optional. 
+
+For the idShort there are the following recommendations (rules and order can be used for automatically creation of an idShort):
+
+- If an English shortname is available in the related concept description, the English shortName can also be used as idShort. 
+- If there is an English preferredName available in the related concept description, this name can be converted to idShort, e.g. the preferredName “Maximum rotation speed” can be converted to “maximumRotationSpeed”.
+
+In case a submodel template specification is used as a base, the idShort (and display name) defined in this submodel template shall be used.
+
+(Updated: 2021-01-11)
 
 **[Where shall images (products or icons) of an asset be stored, e.g. for the use in dashboards?](#id31)** <a id="id31"></a><!-- ID: 31 -->
 
