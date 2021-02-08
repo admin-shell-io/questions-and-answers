@@ -151,15 +151,23 @@ Alternatively an own concept description may be defined and "isCaseOf" may be us
 
 **[Is the following IRI-based ID with a query parameter valid “http://vendor.com/suffx?a=abc&b=xyz”?](#id38)** <a id="id38"></a><!-- ID: 38 -->
 
-Yes, this is a valid ID. (Answered: 2020-09-21)
-
-**[Are semanticID(s) optional or mandatory?](#id40)** <a id="id40"></a><!-- ID: 40 -->
-
-SemanticIDs shall always be used for submodels and for submodelElements. Since idShort(s) or Submodel ID(s) may differ between assets and suppliers, only semanticID(s) can be identical. If semanticIDs are not available in eCl@ss or CDD, it is suggested to define an own semanticID as company specific or on GITHUB at admin-shell-io (https://github.com/admin-shell-io/id ).
-
-In AAS Part 1 V2.0 semanticId(s) are mandatory for submodel elements and are recommendeded for submodels with kind=Instance. For submodels with kind=Template the semanticId is optional.
+Yes, this is a valid ID.
 
 (Answered: 2020-09-21)
+
+
+**[Are semanticId(s) optional or mandatory?](#id40)** <a id="id40"></a><!-- ID: 40 -->
+
+Although semanticIds are optional it is recommended to add a semantic reference (semanticId) whenever possible: without semanticId there is no semantic interoperability. IdShort of elements can be standardized as is done for some elements in submodel templates. However, this is not sufficient. Additionally, a semanticId is needed, for example to include version information or information about variants about the same element.
+
+Sometimes there is no standardized concept description available in ECLASS or IEC CDD. See the [answer to this question](https://github.com/admin-shell-io/questions-and-answers#id3) for how to deal with this case. 
+
+In AAS Part 1 V3.0RC01 semanticId(s) are not mandatory for submodels or submodel elements. SemanticId(s) are recommended to be added for submodel instances and submodel elements.
+
+Up to AAS Part 1 V2.0 semanticId(s) were mandatory for submodel elements and were recommended for submodels with kind=Instance. For submodels with kind=Template the semanticId was optional.
+
+(Updated: 2021-02-08)
+
 
 **[Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)** <a id="id41"></a><!-- ID: 41 -->
 
