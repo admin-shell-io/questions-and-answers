@@ -160,11 +160,11 @@ Although semanticIds are optional it is recommended to add a semantic reference 
 
 Sometimes there is no standardized concept description available in ECLASS or IEC CDD. See the [answer to this question](https://github.com/admin-shell-io/questions-and-answers#id3) for how to deal with this case. 
 
-In AAS Part 1 V2.0 semanticId(s) are mandatory for submodel elements and are recommendeded for submodels with kind=Instance. For submodels with kind=Template the semanticId is optional.
+In AAS Part 1 V3.0RC01 semanticId(s) are not mandatory for submodels or submodel elements. SemanticId(s) are recommended to be added for submodel instances and submodel elements.
 
-In AAS Part 1 V3.0RC01 semanticId(s) are not mandatory any longer for submodel elements. Still, semanticId(s) are recommended to be added for submodel instances and submodel elements.
+Up to AAS Part 1 V2.0 semanticId(s) were mandatory for submodel elements and were recommended for submodels with kind=Instance. For submodels with kind=Template the semanticId was optional.
 
-(Updated: 2020-11-01)
+(Updated: 2021-02-08)
 
 
 **[Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)** <a id="id41"></a><!-- ID: 41 -->
