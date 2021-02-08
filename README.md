@@ -16,7 +16,7 @@ A typical usage for logical references is in the description of a topology of th
 
 (Answered: 2020-08-13)
 
-**[If the same properties are use in several submodels, shall they also be entered several times or shall they be referenced?](#id5)** <a id="id5"></a><a id="id23"></a><!-- ID: 5, 23 -->
+**[If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#id5)** <a id="id5"></a><a id="id23"></a><!-- ID: 5, 23 -->
 
 Submodels shall be as independent as possible so that they can be changed and developed separately.
 Consequently, the same properties shall be copied to another submodel and references shall not be used in such case. 
@@ -28,8 +28,8 @@ The concept description referenced in semanticId, however, should be the same.
 
 AAS defines specific constructs of unit and unitID for concept descriptions (template DataSpecificationIEC61360).
 We advise you to use unitIDs  that refer to pre-defined eCl@ss IRDIs, e.g., 0173-1#05-AAA480#002  for millimeters. 
-In a non-likely case of non-existent global IRDI for a unit, please follow the general guidance for custom semantic IDs
-to create a custom unitID.
+In a non-likely case of non-existent global IRDI for a unit, please [follow the general guidance for custom semantic IDs
+to create a custom unitID](https://github.com/admin-shell-io/questions-and-answers/blob/master/README.md#id3).
 
 (Answered: 2020-08-13)
 
@@ -57,7 +57,7 @@ Details of the Asset Administration Shell Part 1 provides the **MultiLanguagePro
 
 **[How shall a document be handled which includes different content according to VDI 2770 and the related DocumentClassIDs?](#id10)** <a id="id10"></a><!-- ID: 10 -->
 
-Currently VDI 2770 only allows exactly one DocumentClassID per document. A proposal has been already made to the VDI 2770 workgroup to extend this. In AAS it is suggested to list several properties with different DocumentClassIDs for such a multipurpose document.
+Currently, VDI 2770 only allows exactly one DocumentClassID per document. A proposal has been already made to the VDI 2770 workgroup to extend this. In AAS it is suggested to list several properties with different DocumentClassIDs for such a multipurpose document.
 
 (Answered: 2020-08-13)
 
@@ -65,8 +65,9 @@ Currently VDI 2770 only allows exactly one DocumentClassID per document. A propo
 
 The following names shall be used for submodels:
 
+- [**Nameplate**](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-digital_nameplate.html) defines digital nameplate
 - **Identification** defines supplier and product, 
-- **TechnicalData** for technical data of a product,
+- [**TechnicalData**](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-Technical_Data.html) for technical data of a product,
 - **ConfigurationData** for setpoints of a production process,
 - **OperationalData** for actual values of a production process,
 - **Documentation** to store documents for a product and to classify the documentation according to VDI 2770,
