@@ -117,13 +117,13 @@ In case a submodel template specification is used as a base, the idShort defined
 Note: currently there is ongoing work on a “displayName” concept. When the according specification is completed, this question will also be updated.
 (Answered: 2020-09-21)
 
-**[Where shall images (products or icons) of an asset be stored, e.g. for the use in dashboards?](#id31)** <a id="id31"></a><!-- ID: 31 -->
+**[Where shall images (products or icons) of an asset be stored, e.g., for the use in dashboards?](#id31)** <a id="id31"></a><!-- ID: 31 -->
 
-With V3.0RC01 of Part 1 assetInformation/defaultThumbnail was introduced. The type of these thumbnails is "File".
+With V3.0RC01 of Part 1 an optional attribute "assetInformation/defaultThumbnail" was introduced. The type of this attribute is "File".
 
-The standardized submodel template "Generic Frame for Technical Data for Industrial Equipment in Manufacturing" (Version 1.1) allows to add as many product images as needed (https://admin-shell.io/ZVEI/TechnicalData/Productimage/1/1). Again, the type of these images is "File".
+The standardized [submodel template "Generic Frame for Technical Data for Industrial Equipment in Manufacturing" (Version 1.1)](https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/Submodel_Templates-Asset_Administration_Shell-Technical_Data.html) allows to add as many product images as needed (https://admin-shell.io/ZVEI/TechnicalData/Productimage/1/1). Again, the type of these images is "File".
 
-(Updated: 2021-01-11)
+(Updated: 2021-02-08)
 
 **[How shall properties be entered which are defined both in eCl@ss and in CDD?](#id34)** <a id="id34"></a><!-- ID: 34 -->
 
