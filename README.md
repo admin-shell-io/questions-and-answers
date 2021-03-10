@@ -1,4 +1,4 @@
-# Asset Administration Shell Frequently Answered Question List 
+# Asset Administration Shell Frequently Asked Question List 
 ## Disclaimer
 
 This Q&A has been created by a Task Force of "ZVEI SG Modelle und Standards".
