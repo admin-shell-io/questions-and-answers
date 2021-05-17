@@ -125,14 +125,38 @@ Map concepts to “admin-shell.io” namespace (see [custom identifier best prac
 
 (Answered: 2020-08-24)
 
-**[How is the relation between idShort, shortName and preferredName for a submodel element and the related concept description?](#id30)** <a id="id30"></a><!-- ID: 30 -->
+**[Are there any best practices how to choose the idShort of an element?](#id30a)** <a id="id30a"></a><!-- ID: 30a -->
 
-If an English shortname is available in a related concept description, the English shortName shall be also used as idShort. If only a preferredName is available, that shall be translated to idShort, e.g. the preferredName “Maximum rotation speed” becomes translated to “maximumRotationSpeed”.
+For choosing an idShort value there are the following recommendations (rules and order can be used for automatically creation of an idShort):
+
+- If an English shortname is available in the related concept description, the English shortName can be used as idShort. 
+- If there is an English preferredName available in the related concept description, this name can be converted to idShort, e.g. the preferredName “Maximum rotation speed” can be converted to “maximumRotationSpeed”.
+
 In case a submodel template specification is used as a base, the idShort defined in this submodel template shall be used.
 
-Note: currently there is ongoing work on a “displayName” concept. When the according specification is completed, this question will also be updated.
+Note: the isShort does not carry any semantic meaning. For speaking names the display name shall be used.
 
-(Answered: 2020-09-21)
+(Updated: 2021-05-17)
+
+
+**[I need a speaking name on my dashboard - which attribute value shall I use?](#id30b)** <a id="id30b"></a><!-- ID: 30b -->
+
+For speaking names (in different languages) the display name (Referable/displayName) shall be used.
+
+If no display name is defined in the language requested by the application, then the display name is selected in the following order if available:
+- the preferred name in the requested language of the concept description defining the semantics of the element
+- If there is a default language list defined in the application, then the corresponding preferred name in the language is chosen according to this order.
+- the English preferred name of the concept description defining the semantics of the element
+- the short name of the concept description
+- the idShort of the element
+
+Note: DisplayName was introduced with Part 1, V3.0RC01. Display name is optional. 
+
+(Updated: 2021-05-17)
+
+**[How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)** <a id="id27"></a><a id="id28"></a><!-- ID: 27, 28 -->
+
+Map concepts to “admin-shell.io” namespace (see [custom identifier best practices](#id18)). Within the concept description itself use “sourceOfDefinition” or “isCaseOf” to link to “original” concept. (Answered: 2020-08-24)
 
 **[Where shall images (products or icons) of an asset be stored, e.g., for the use in dashboards?](#id31)** <a id="id31"></a><!-- ID: 31 -->
 
