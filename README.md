@@ -1,3 +1,4 @@
+<!-- last id: 45 -->
 # Asset Administration Shell Frequently Asked Question List 
 ## Disclaimer
 
@@ -238,6 +239,17 @@ Please be aware: the AAS does not support the concept of alternative units (as d
 In general: The aim of the basic AAS concept is not about defining semantics, it is about referencing concept descriptions. Support of corresponding data specifciations is optional anyway.
 
 (Answered 2021-01-11)
+ 
+ **[How should array data values within the AAS be represented if array elements have the same semantic ID?](#id45)** <a id="id45"></a>
+
+Short-term solution:
+Use "Blob"-element, e.g., "[1,2,3,4,5]" having a "serialized" JSON-value format (see upcoming time series submodel template). The data types of array's content, e.g. string, float or integer, can be defined using custom semantic ID of the submodel element.
+(Design decision: take "Blob" instead of String in order not to overload generic UIs with representation of possibly long arrays.)
+
+Mid- to long-term solution:
+A change to metamodel of the AAS is required. A work item has been passed to the sub working group.
+
+(Answered 2021-05-31)
 
 
 ## Asset Administration Shell in Detail Series
