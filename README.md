@@ -251,6 +251,13 @@ A change to metamodel of the AAS is required. A work item has been passed to the
 
 (Answered 2021-05-31)
 
+ **[How to use qualifiers?](#id46)** <a id="id46"></a>
+
+In this Repository, you can find a qualifier example in the folder "examples". It contains an AAS with a Submodel called "QualifierExampleSubmodel". 
+1. In this Submodel the property "MaxRotationSpeed" has two example qualifiers. They are extracted from [DIN SPEC 92000](https://www.beuth.de/en/technical-rule/din-spec-92000/320981982) and state that the Submodel assures, that the assets MaxRotationSpeed in greater than 30 1/min.
+2. Besides that, the Submodel contains the Submodelelementcollection "Width_LifeCycle", which contains the Property width three times. Based on IEC 62569-1:2017, the property "width" might need different values during the assets life cycle. In the example, there are three slightly different values for "As Specified", "As Built" and "As Decomissioned". You may find further information about this concept in the [IEC Common Data Dictionary](https://cdd.iec.ch/cdd/iec61360/iec61360.nsf/e0e56d2682a34311c12575560058dc1c/20bf16149b5986a8c12586470047d709)
+
+Further information on qualifiers and the usage in the AASx Package Explorer can be found in the specific [screencast on qualifiers](https://admin-shell-io.com/screencasts/aasx-package-explorer/en/Aasx_PackEx_Tutorial_-_EN_-_16_Working_with_qualifiers.mp4)
 
 ## Asset Administration Shell in Detail Series
 
