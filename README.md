@@ -28,15 +28,15 @@ The concept description referenced in semanticId, however, should be the same.
 **[How to use physical units for quantifiable properties?](#id7)** <a id="id7"></a><a id="id20"></a><!-- ID: 7, 20 -->
 
 AAS defines specific constructs of unit and unitID for concept descriptions (template DataSpecificationIEC61360).
-We advise you to use unitIDs  that refer to pre-defined eCl@ss IRDIs, e.g., 0173-1#05-AAA480#002  for millimeters. 
+We advise you to use unitIDs  that refer to pre-defined ECLASS IRDIs, e.g., 0173-1#05-AAA480#002  for millimeters. 
 In a non-likely case of non-existent global IRDI for a unit, please [follow the general guidance for custom semantic IDs
 to create a custom unitID](https://github.com/admin-shell-io/questions-and-answers/blob/master/README.md#id3).
 
 (Answered: 2020-08-13)
 
-**[What shall be entered for the semanticId attribute if a related concept description does not exist in eCl@ss or IEC CDD?](#id3)** <a id="id3"></a><!-- ID: 3 -->
+**[What shall be entered for the semanticId attribute if a related concept description does not exist in ECLASS or IEC CDD?](#id3)** <a id="id3"></a><!-- ID: 3 -->
 
-Besides eCl@ss and IEC CCD also other domain specific dictionaries may be used. The only prerequisite is that the id can be uniquely resolved.
+Besides ECLASS and IEC CCD also other domain specific dictionaries may be used. The only prerequisite is that the id can be uniquely resolved.
 
 This also holds true for proprietary dictionaries. For example, the id of a proprietary concept description defined by your own company could be <CompanyName>/<FurtherHierarchicalName>/<PropertyName>”. This id is also used as semanticId of the property then.
 
@@ -44,7 +44,7 @@ Alternatively, an agile flexible approach using GITHUB has been defined. You may
 
 (Answered: 2020-08-13)
 
-**[How shall the eCl@ss group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)** <a id="id8"></a><!-- ID: 8 -->
+**[How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)** <a id="id8"></a><!-- ID: 8 -->
 
 Please use the submodel template based on VDI 2770 for documentation instead. It will be released soon.
 
@@ -167,9 +167,9 @@ The standardized [submodel template "Generic Frame for Technical Data for Indust
 
 (Updated: 2021-02-08)
 
-**[How shall properties be entered which are defined both in eCl@ss and in CDD?](#id34)** <a id="id34"></a><!-- ID: 34 -->
+**[How shall properties be entered which are defined both in ECLASS and in CDD?](#id34)** <a id="id34"></a><!-- ID: 34 -->
 
-If definitions for several product application areas are needed (e.g. eCL@ss for factory automation and CDD for process automation), the related properties (e.g. ManufacturerName) shall be entered twice. At each of the properties one of the concept descriptions (eCl@ss or CDD) is entered. The name of a property shall be either counted up (e.g. ManufactureName1) or extended by a suffix (e.g. ManufacturerNameCDD).
+If definitions for several product application areas are needed (e.g. ECLASS for factory automation and CDD for process automation), the related properties (e.g. ManufacturerName) shall be entered twice. At each of the properties one of the concept descriptions (ECLASS or CDD) is entered. The name of a property shall be either counted up (e.g. ManufactureName1) or extended by a suffix (e.g. ManufacturerNameCDD).
 
 Alternatively an own concept description may be defined and "isCaseOf" may be used, so that both IRDIs can be entered in the concept description.
 
@@ -220,8 +220,6 @@ Via display names (introduced in V3.0RC01 Referable/displayName, it is also poss
 Note: It is requested that the idShort of a non-identifiable is unique in its name space (for example in a Submodel or in a SubmodelElementCollection). This is not requested for the display names!
 
 (Answered: 2021-01-11)
-
-
 
 **[How to treat ECLASS Quantity Concept in AAS?](#id44)** <a id="id44"></a>
 
