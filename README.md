@@ -247,7 +247,7 @@ Use "Blob"-element, e.g., "[1,2,3,4,5]" having a "serialized" JSON-value format 
 (Design decision: take "Blob" instead of String in order not to overload generic UIs with representation of possibly long arrays.)
 
 Mid- to long-term solution:
-A change to metamodel of the AAS is required. A work item has been passed do the sub working group.
+A change to metamodel of the AAS is required. A work item has been passed to the sub working group.
 
 (Answered 2021-05-31)
 
