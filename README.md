@@ -259,6 +259,8 @@ In this Repository, you can find a qualifier example in the folder "Examples". I
 
 Further information on qualifiers and the usage in the AASx Package Explorer can be found in the specific [screencast on qualifiers](https://admin-shell-io.com/screencasts/aasx-package-explorer/en/Aasx_PackEx_Tutorial_-_EN_-_16_Working_with_qualifiers.mp4)
 
+(Answered 2021-05-31)
+ 
 ## Asset Administration Shell in Detail Series
 
  [Overview over all parts and versions ](https://www.plattform-i40.de/PI40/Redaktion/EN/Standardartikel/specification-administrationshell.html)
