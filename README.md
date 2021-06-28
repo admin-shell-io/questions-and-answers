@@ -10,6 +10,24 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ## Questions-and-Answers
 
+**[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
+
+There are currently to ways to create/reference further AAS:
+1.	Using a BOM (Bill of Material) submodel, a dedicated submodel with self- or co-managed assets
+
+  > Note: Scope of the BOM submodel are relations between *assets* and not *AASs*. BOM submodel defined “isPartOf” and “isIdentical” relation types between assets.
+
+   *	Self-managed assets have own asset ID which can be used in AAS infrastructure (e.g., a registry) to query available AAS
+   *	Co-managed assets have no asset ID and own AAS.
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;*Advantages*: BOM-AAS is self-contained and has no “external” dependencies such as references to AAS, probably will be used as blueprint for further submodels
+
+&nbsp;&nbsp;&nbsp;&nbsp;*Disadvantages*: AAS infrastructure for resolution of asset ID to AAS is needed
+
+2.	Direct references to external AAS or Submodels using Relationship Submodel Elements. We currently do not recommend this method in case of lacking generalizability and creation of tight couplings between AAS (by taking over the “resolution” part)
+
+(Answered: 2021-06-28)
+
 **[How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)** <a id="id2"></a><!-- ID: 2 -->
 
 Links to websites shall be entered as File object (physical reference). ReferenceElement  objects represent logical references.
