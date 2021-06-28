@@ -13,7 +13,7 @@ Please address discussions and proposals via issues and pull requests in the git
 **[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
 
 There are currently two ways to create/reference further AAS:
-1.	Using a BOM (Bill of Material) submodel, a dedicated submodel with self- or co-managed assets
+1) Using a BOM (Bill of Material) submodel, a dedicated submodel with self- or co-managed assets
 
   > Note: Scope of the BOM submodel are relations between *assets* and not *AASs*. BOM submodel defined “isPartOf” and “isIdentical” relation types between assets.
 
@@ -24,7 +24,7 @@ There are currently two ways to create/reference further AAS:
 
 &nbsp;&nbsp;&nbsp;&nbsp;*Disadvantages*: AAS infrastructure for resolution of asset ID to AAS is needed.
 
-2.	Direct references to external AAS or Submodels using ReferenceElements or RelationshipElements. We currently do not recommend this method in case of lacking generalizability and creation of tight couplings between AAS (by taking over the “resolution” part).
+2)	Direct references to external AAS or Submodels using ReferenceElements or RelationshipElements. We currently do not recommend this method in case of lacking generalizability and creation of tight couplings between AAS (by taking over the “resolution” part).
 
 (Answered: 2021-06-28)
 
