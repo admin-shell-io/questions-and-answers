@@ -23,6 +23,7 @@
 ## Tools and SDKs <!-- overview based on https://www.iiconsortium.org/pdf/2021_March_JoI_Open_Source_Drives_Digital_Twin_SA.pdf -->
 ### Tools (which meta-model level, which interfaces (AASX (XML, JSON), OPC UA, RESTful), infrastructure (registry)... )
 * [AASX Package Explorer](https://github.com/admin-shell-io/aasx-package-explorer) (Apache License 2.0; C#) 
+  * [Online version](https://admin-shell-io.com:5005/)
 * [AASX Server](https://github.com/admin-shell-io/aasx-server) (Apache License 2.0; C#)
 * [Web AAS Client](https://github.com/admin-shell-io/web-aas-client) (Apache License 2.0, JavaScript)
 
