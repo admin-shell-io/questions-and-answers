@@ -1,5 +1,5 @@
 <!-- last id: 45 -->
-# Asset Administration Shell Frequently Asked Question List 
+# Asset Administration Shell Frequently Asked Questions List 
 ## Disclaimer
 
 This Q&A has been created by a Task Force of "ZVEI SG Modelle und Standards".
@@ -217,7 +217,7 @@ Up to AAS Part 1 V2.0 semanticId(s) were mandatory for submodel elements and wer
 
 Yes. Please use the following alternatives:
 -	type=ConceptDescription, local=True: the concept description is within the package or deployed on the same server like the element referring to it
--	type=ConceptDescription, local=False: the concept description is located within a different pakckage or possibly deployed on a different server than the element referring to it
+-	type=ConceptDescription, local=False: the concept description is located within a different package or possibly deployed on a different server than the element referring to it
 -	type=GlobalReference, local=False: a concept description object is not defined, just a reference to an external source is made
 
 (Answered: 2020-09-21)
