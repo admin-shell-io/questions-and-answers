@@ -55,8 +55,8 @@ BaSyx ([https://bit.ly/3mNRe85](https://bit.ly/3mNRe85)) provides various module
 
 ## References
 ###### [1]: „What is Industrie 4.0?“: https://bit.ly/3kaRz2N.
-###### [2]:	„The Asset Administration Shell: Implementing digital twins for use in Industrie 4.0, A starter kit for developers,“ 12/2019: https://bit.ly/3kZZSPl.
-###### [3]:	„Der Digitale Zwilling in Industrie 4.0 - Eine Kurz- Einführung zu Merkmalen, Teilmodellen & Verwal- tungsschalen. (English version pending),“ 10/2020: https://bit.ly/3e6Za08.
+###### [2]: „The Asset Administration Shell: Implementing digital twins for use in Industrie 4.0, A starter kit for developers,“ 12/2019: https://bit.ly/3kZZSPl.
+###### [3]: „Der Digitale Zwilling in Industrie 4.0 - Eine Kurz- Einführung zu Merkmalen, Teilmodellen & Verwal- tungsschalen. (English version pending),“ 10/2020: https://bit.ly/3e6Za08.
 ###### [4]: „Details of the Administration Shell - from idea to implementation,“ 07/2019: https://bit.ly/2H8c2Hn.
 ###### [5]: „Fortschrittsbericht 2020. Industrie 4.0 gestalten. Souverän. Interoperabel. Nachhaltig (English version pending),“ 06/2020: https://bit.ly/3oaRVJe.
 ###### [6]: The Reference Architecture Model RAMI 4.0 and the Industrie 4.0 component, ISBN: 978-3-8007-4990-4, 2018.
