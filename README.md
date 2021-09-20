@@ -10,6 +10,12 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ## Questions-and-Answers
 
+**[How to define optional and mandatory elements for a submodel of kind=Template?](#id43)** <a id="id43"></a><!-- ID: 43 -->
+
+Currently (September 2021) there is no clean solution for that. Plattform Industrie 4.0 is evaluating different modeling options.
+
+As a *temporary workaround* we propose to use the qualifier name is "Multiplier" with values "One", "ZeroToOne", "ZeroToMany", "OneToMany" as done by many practitioners defining submodel templates.
+
 **[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
 
 There are currently two ways to create/reference further AAS:
