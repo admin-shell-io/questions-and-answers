@@ -10,6 +10,20 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ## Questions-and-Answers
 
+**[How does the version of a submodel impacts referencing of a submodel?](#idgh14)** <a id="idgh14"></a><!-- ID: gh14 -->
+
+AAS provides two approaches for versioning:
+
+1) Versioning within semantic id e.g. for URIs "0173-xxx-zzz-zzz#version" or "https://admin-shell.io/sandbox/zvei/nameplate/0/1/Nameplate":
+* Possibly, breaking semantic changes, i.e., other meaning
+* Possibly, reverse-compatibility, e.g. extension
+* Not clarified yet which meaning "major" and "minor" parts within the semantic ID are having. Currently they correspond to the version of the submodel spec, e.g., 2.0 or 2.1.
+
+2) Changes within "administrative information" within AAS:
+* Related to content within AAS, not to its "external-interface", therefore not necessary to standardize meanings of Major/Minor now.
+
+As of now, references ignore versioning information. In case versioning is essential, the versioning information must be part of the element's ID.
+
 **[How to define optional and mandatory elements for a submodel of kind=Template?](#id43)** <a id="id43"></a><!-- ID: 43 -->
 
 Currently (September 2021) there is no clean solution for that. Plattform Industrie 4.0 is evaluating different modeling options.
