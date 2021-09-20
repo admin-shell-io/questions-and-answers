@@ -10,10 +10,9 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ## Questions-and-Answers
 
-**[How to should submodel templates (kind=template) and submodel instances (kind=instance) linked together?](#idgh37)** <a id="idgh37"></a><!-- ID: gh37 -->
+**[How should submodel templates (kind=Template) and submodel instances (kind=Instance) be linked together?](#idgh37)** <a id="idgh37"></a><!-- ID: gh37 -->
 
-The submodel template with kind=instance and the submodel instance kind=instance should have the same semanticID to indicate the applicability of the template on the instance.
-
+The submodel template with kind=Template and the submodel instance with kind=instance should have the same semanticID to indicate the applicability of the template on the instance.
 
 **[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
 
