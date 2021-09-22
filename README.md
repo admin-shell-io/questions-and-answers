@@ -1,4 +1,4 @@
-<!-- last id: 45 -->
+<!-- last id: 46 -->
 # Asset Administration Shell Frequently Asked Questions List 
 ## Disclaimer
 
@@ -15,6 +15,28 @@ Please address discussions and proposals via issues and pull requests in the git
 Currently (September 2021) there is no clean solution for that. Plattform Industrie 4.0 is evaluating different modeling options.
 
 As a *temporary workaround* we propose to use the qualifier name is "Multiplier" with values "One", "ZeroToOne", "ZeroToMany", "OneToMany" as done by many practitioners defining submodel templates.
+
+**[How should submodel templates (kind=Template) and submodel instances (kind=Instance) be linked together?](#idgh37)** <a id="idgh37"></a><!-- ID: gh37 -->
+
+The submodel template with kind=Template and the submodel instance with kind=Instance should have the same semanticID to indicate the applicability of the template on the instance. 
+
+**[How does the version of a submodel impact referencing of a submodel?](#idgh14)** <a id="idgh14"></a><!-- ID: gh14 -->
+
+AAS provides two approaches for versioning:
+
+1) Versioning within semantic ID, e.g., for URIs "0173-xxx-zzz-zzz#version" or "https://admin-shell.io/sandbox/zvei/nameplate/0/1/Nameplate":
+* Possibly, breaking semantic changes, i.e., other meaning
+* Possibly, reverse-compatibility, e.g., extension
+* Not clarified yet which meaning "major" and "minor" parts within the semantic ID are having. Currently they correspond to the version of the submodel spec, e.g., 2.0 or 2.1.
+
+2) Changes within "administrative information" within AAS:
+* Related to content within AAS, not to its "external-interface", therefore not necessary to standardize meanings of Major/Minor now.
+
+As of now, references ignore versioning information. In case versioning is essential, the versioning information must be part of the element's ID.
+
+**[How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)** <a id="id46"></a><!-- ID: 46 -->
+
+[This AAS example](https://admin-shell-io.github.io/questions-and-answers/Examples/isCaseOf_Examples.aasx) contains a template of "Technical Data" submodel with two properties indicating how alterantive semantic IDs can be used in AAS modeling. For example, the "ManufacturerName" property, has a semantic ID "https://admin-shell.io/sandbox/SG2/TechnicalData/ManufacturerName/1/1" and two isCaseOf references to a ELASS and a CDD IRDIs (the references are within the ConceptDescription).
 
 **[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
 
