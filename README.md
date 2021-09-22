@@ -10,6 +10,12 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ## Questions-and-Answers
 
+**[How to define optional and mandatory elements for a submodel of kind=Template?](#id43)** <a id="id43"></a><!-- ID: 43 -->
+
+Currently (September 2021) there is no clean solution for that. Plattform Industrie 4.0 is evaluating different modeling options.
+
+As a *temporary workaround* we propose to use the qualifier name is "Multiplier" with values "One", "ZeroToOne", "ZeroToMany", "OneToMany" as done by many practitioners defining submodel templates.
+
 **[How should submodel templates (kind=Template) and submodel instances (kind=Instance) be linked together?](#idgh37)** <a id="idgh37"></a><!-- ID: gh37 -->
 
 The submodel template with kind=Template and the submodel instance with kind=Instance should have the same semanticID to indicate the applicability of the template on the instance. 
