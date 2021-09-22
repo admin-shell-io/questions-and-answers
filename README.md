@@ -1,4 +1,4 @@
-<!-- last id: 45 -->
+<!-- last id: 46 -->
 # Asset Administration Shell Frequently Asked Questions List 
 ## Disclaimer
 
@@ -23,6 +23,11 @@ AAS provides two approaches for versioning:
 * Related to content within AAS, not to its "external-interface", therefore not necessary to standardize meanings of Major/Minor now.
 
 As of now, references ignore versioning information. In case versioning is essential, the versioning information must be part of the element's ID.
+
+**[How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)** <a id="id46"></a><!-- ID: 46 -->
+
+[This AAS example](https://admin-shell-io.github.io/questions-and-answers/Examples/isCaseOf_Examples.aasx) contains a template of "Technical Data" submodel with two properties indicating how alterantive semantic IDs can be used in AAS modeling. For example, the "ManufacturerName" property, has a semantic ID "https://admin-shell.io/sandbox/SG2/TechnicalData/ManufacturerName/1/1" and two isCaseOf references to a ELASS and a CDD IRDIs (the references are within the ConceptDescription).
+
 
 **[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
 
