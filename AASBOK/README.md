@@ -6,7 +6,8 @@
 * [AAS from technical perspective (04.21)](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/2021_What-is-the-AAS.html)
 ### Core specifications
 * [Part 1 v3](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part1_V3.html)
-* [Part 2 v1](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html)
+* [Part 2 v1RC01](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html)
+  * [Open API definitions of RESTful interfaces](https://app.swaggerhub.com/search?type=API&owner=Plattform_i40)
 ### Standardized submodels
 * [Technical Data Submodel (11.20)](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-Technical_Data.html)
 * [Digital Nameplate (11.20)](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-digital_nameplate.html)
