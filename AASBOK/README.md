@@ -9,6 +9,7 @@
 * [Part 2 v1RC01](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Details_of_the_Asset_Administration_Shell_Part2_V1.html)
   * [Open API definitions of RESTful interfaces](https://app.swaggerhub.com/search?type=API&owner=Plattform_i40)
 ### Standardized submodels
+* [Contact Information (11.21)](https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/Spezifikation_Submodel-Templates.html)
 * [Technical Data Submodel (11.20)](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-Technical_Data.html)
 * [Digital Nameplate (11.20)](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-digital_nameplate.html)
 * [BOM Submodel (theoretical foundations only) (04.18)](https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/hm-2018-relationship.html)
