@@ -243,12 +243,15 @@ Up to AAS Part 1 V2.0 semanticId(s) were mandatory for submodel elements and wer
 
 **[Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)** <a id="id41"></a><!-- ID: 41 -->
 
+ [update: In V3.0RC01 of part 1 of AAS in Detail the attribue "local" in References was removed]
+  
 Yes. Please use the following alternatives:
--	type=ConceptDescription, local=True: the concept description is within the package or deployed on the same server like the element referring to it
--	type=ConceptDescription, local=False: the concept description is located within a different package or possibly deployed on a different server than the element referring to it
--	type=GlobalReference, local=False: a concept description object is not defined, just a reference to an external source is made
+-	Semantic ID reference type=ConceptDescription: the concept description is within the package or deployed on the same server like the element referring to it
+-	Semantic ID reference type=GlobalReference: a concept description object is not defined, just a reference to an external source is made
 
-(Answered: 2020-09-21)
+ Note: AASX Package Explorer will be updated to V3.0RC01 in the first half of 2022.
+ 
+(Answered: 2021-12-13)
 
 **[Is it allowed to have both, Submodel Templates and Submodel Instances, in the same AAS?](#id42)** <a name="id42"></a> 
 
