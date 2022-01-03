@@ -13,6 +13,8 @@
 * [Technical Data Submodel (11.20)](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-Technical_Data.html)
 * [Digital Nameplate (11.20)](https://www.plattform-i40.de/PI40/Redaktion/EN/Downloads/Publikation/Submodel_templates-Asset_Administration_Shell-digital_nameplate.html)
 * [BOM Submodel (theoretical foundations only) (04.18)](https://www.plattform-i40.de/PI40/Redaktion/DE/Downloads/Publikation/hm-2018-relationship.html)
+### Reference models
+* [Reference modeling guideline for a manufacturing plant (12.21)](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.html)
 ### Security
 ### Semantic ID repositories
 * [ID repository](https://github.com/admin-shell-io/id)
