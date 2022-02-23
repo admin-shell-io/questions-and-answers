@@ -25,12 +25,10 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
 - [If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#id5)
 - [How to use physical units for quantifiable properties?](#id7)
-- [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
 - [How to treat values of Properties with values in multiple languages?](#id9)
 - [How shall a document be handled which includes different content according to VDI 2770 and the related DocumentClassIDs?](#id10)
 - [How to store certificates and conformance declarations within AAS/Submodels?](#id13)
 - [Which mechanisms can be used to structure complex data?](#id15)
-- [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
 - [Are there any best practices how to choose the idShort of an element?](#id30a)
 - [I need a speaking name on my dashboard - which attribute value shall I use?](#id30b)
 - [Where shall images (products or icons) of an asset be stored, e.g., for the use in dashboards?](#id31)
@@ -45,7 +43,9 @@ Please address discussions and proposals via issues and pull requests in the git
 ### Versioning
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
 
-### ECLASS and Semantics
+### Semantics
+- [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
+- [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
 - [How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)
 - [What shall be entered for the semanticId attribute if a related concept description does not exist in ECLASS or IEC CDD?](#id3)
 - [How shall properties be entered which are defined both in ECLASS and in CDD?](#id34)
