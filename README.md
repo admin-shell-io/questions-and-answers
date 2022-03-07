@@ -8,7 +8,52 @@ Primary URI for end-user usage and references is: [https://admin-shell-io.github
 
 Please address discussions and proposals via issues and pull requests in the github repository: [https://github.com/admin-shell-io/questions-and-answers/](https://github.com/admin-shell-io/questions-and-answers/)
 
-## Questions-and-Answers
+## FAQ
+
+### Asset Administration Shell
+- [What are best practices for creating a system of Asset Administration Shells?](#id42)
+- [Where are examples of AAS available?](#id16)
+
+### Submodel Templates
+- [How to define optional and mandatory elements for a submodel of kind=Template?](#id43)
+- [How should submodel templates (kind=Template) and submodel instances (kind=Instance) be linked together?](#idgh37)
+- [Which names are already defined for important submodels?](#id12)
+- [Which submodel shall contain the serial number of a device?](#id23)
+- [Is it allowed to have both, Submodel Templates and Submodel Instances, in the same AAS?](#id42)
+
+### SubmodelElements
+- [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
+- [If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#id5)
+- [How to use physical units for quantifiable properties?](#id7)
+- [How to treat values of Properties with values in multiple languages?](#id9)
+- [How shall a document be handled which includes different content according to VDI 2770 and the related DocumentClassIDs?](#id10)
+- [How to store certificates and conformance declarations within AAS/Submodels?](#id13)
+- [Which mechanisms can be used to structure complex data?](#id15)
+- [Are there any best practices how to choose the idShort of an element?](#id30a)
+- [I need a speaking name on my dashboard - which attribute value shall I use?](#id30b)
+- [Where shall images (products or icons) of an asset be stored, e.g., for the use in dashboards?](#id31)
+- [How should I name a submodel element if there are more than one with the same semanticId?](#id43)
+- [How should array data values within the AAS be represented if array elements have the same semantic ID?](#id45)
+- [How to use qualifiers?](#id46)
+
+### Identification
+- [What are best practices for creating custom IRI identifiers for generic concepts?](#id18)
+- [Is the following IRI-based ID with a query parameter valid “http://vendor.com/suffx?a=abc&b=xyz”?](#id38)
+
+### Versioning
+- [How does the version of a submodel impact referencing of a submodel?](#idgh14)
+
+### Semantics
+- [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
+- [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
+- [How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)
+- [What shall be entered for the semanticId attribute if a related concept description does not exist in ECLASS or IEC CDD?](#id3)
+- [How shall properties be entered which are defined both in ECLASS and in CDD?](#id34)
+- [Are semanticId(s) optional or mandatory?](#id40)
+- [Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)
+- [How to treat ECLASS Quantity Concept in AAS?](#id44)
+
+## Answers
 
 **[How to define optional and mandatory elements for a submodel of kind=Template?](#id43)** <a id="id43"></a><!-- ID: 43 -->
 
@@ -45,14 +90,14 @@ There are currently two ways to create/reference further AAS:
 
   > Note: Scope of the BOM submodel are relations between *assets* and not *AASs*. BOM submodel defined “isPartOf” and “isIdentical” relation types between assets.
 
-   *	Self-managed assets have own asset ID which can be used in AAS infrastructure (e.g., a registry) to query available AAS.
-   *	Co-managed assets have no asset ID and own AAS.
+   *  Self-managed assets have own asset ID which can be used in AAS infrastructure (e.g., a registry) to query available AAS.
+   *  Co-managed assets have no asset ID and own AAS.
  
 &nbsp;&nbsp;&nbsp;&nbsp;*Advantages*: BOM-AAS is self-contained and has no “external” dependencies such as references to AAS, probably will be used as blueprint for further submodels.
 
 &nbsp;&nbsp;&nbsp;&nbsp;*Disadvantages*: AAS infrastructure for resolution of asset ID to AAS is needed.
 
-2)	Direct references to external AAS or Submodels using ReferenceElements or RelationshipElements. We currently do not recommend this method in case of lacking generalizability and creation of tight couplings between AAS (by taking over the “resolution” part).
+2)  Direct references to external AAS or Submodels using ReferenceElements or RelationshipElements. We currently do not recommend this method in case of lacking generalizability and creation of tight couplings between AAS (by taking over the “resolution” part).
 
 (Answered: 2021-06-28)
 
@@ -152,11 +197,11 @@ Examples of several suppliers are found at: http://admin-shell-io.com/samples/
 What are best practices for creating custom IRI identifiers for generic concepts.
 We advise using “https://admin-shell.io/” prefix for those identifiers (see guides via https://github.com/admin-shell-io/id/) for generic concepts. Note that we advise to use “https:” protocol and avoid adding “www.” subdomain into admin-shell.io naming scheme.
 Furthermore, in practical implementations we advise to “filter” out protocol and schema for comparing IRI identifiers. For example, following IDs should be considered equal:
--	https://admin-shell.io/some_id_example
--	http://admin-shell.io/some_id_example
--	ftp://admin-shell.io/some_id_example
--	https://www.admin-shell.io/some_id_example
--	http://www.admin-shell.io/some_id_example
+- https://admin-shell.io/some_id_example
+- http://admin-shell.io/some_id_example
+- ftp://admin-shell.io/some_id_example
+- https://www.admin-shell.io/some_id_example
+- http://www.admin-shell.io/some_id_example
 
 (Answered: 2020-08-19)
 
@@ -201,9 +246,6 @@ Note: DisplayName was introduced with Part 1, V3.0RC01. Display name is optional
 
 (Updated: 2021-05-17)
 
-**[How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)** <a id="id27"></a><a id="id28"></a><!-- ID: 27, 28 -->
-
-Map concepts to “admin-shell.io” namespace (see [custom identifier best practices](#id18)). Within the concept description itself use “sourceOfDefinition” or “isCaseOf” to link to “original” concept. (Answered: 2020-08-24)
 
 **[Where shall images (products or icons) of an asset be stored, e.g., for the use in dashboards?](#id31)** <a id="id31"></a><!-- ID: 31 -->
 
@@ -246,8 +288,8 @@ Up to AAS Part 1 V2.0 semanticId(s) were mandatory for submodel elements and wer
  [update: In V3.0RC01 of part 1 of AAS in Detail the attribue "local" in References was removed]
   
 Yes. Please use the following alternatives:
--	Semantic ID reference type=ConceptDescription: the concept description is within the package or deployed on the same server like the element referring to it
--	Semantic ID reference type=GlobalReference: a concept description object is not defined, just a reference to an external source is made
+- Semantic ID reference type=ConceptDescription: the concept description is within the package or deployed on the same server like the element referring to it
+- Semantic ID reference type=GlobalReference: a concept description object is not defined, just a reference to an external source is made
 
  Note: AASX Package Explorer will be updated to V3.0RC01 in the first half of 2022.
  
