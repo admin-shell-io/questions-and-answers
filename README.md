@@ -14,12 +14,13 @@ Please address discussions and proposals via issues and pull requests in the git
 - [What are best practices for creating a system of Asset Administration Shells?](#id42)
 - [Where are examples of AAS available?](#id16)
 
-### Submodel Templates
+### Submodels and Submodel Templates
 - [How to define optional and mandatory elements for a submodel of kind=Template?](#id43)
 - [How should submodel templates (kind=Template) and submodel instances (kind=Instance) be linked together?](#idgh37)
 - [Which names are already defined for important submodels?](#id12)
 - [Which submodel shall contain the serial number of a device?](#id23)
 - [Is it allowed to have both, Submodel Templates and Submodel Instances, in the same AAS?](#id42)
+- [Is there a comprehensive list of submodel templates available?](#idgh66)
 
 ### SubmodelElements
 - [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
@@ -40,8 +41,9 @@ Please address discussions and proposals via issues and pull requests in the git
 - [What are best practices for creating custom IRI identifiers for generic concepts?](#id18)
 - [Is the following IRI-based ID with a query parameter valid “http://vendor.com/suffx?a=abc&b=xyz”?](#id38)
 
-### Versioning
+### Infrastructure and Versioning
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
+- [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
 
 ### Semantics
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
@@ -349,7 +351,19 @@ In this Repository, you can find a qualifier example in the folder "Examples". I
 Further information on qualifiers and the usage in the AASx Package Explorer can be found in the specific [screencast on qualifiers](https://admin-shell-io.com/screencasts/aasx-package-explorer/en/Aasx_PackEx_Tutorial_-_EN_-_16_Working_with_qualifiers.mp4)
 
 (Answered 2021-05-31)
+  
+ **[Is there a comprehensive list of submodel templates available?](#idgh66)** <a id="idgh66"></a>
+  
+ There is a list of submodels coming from IDTA (both finalized and under development) available here: https://industrialdigitaltwin.org/en/content-hub/submodels.
  
+  (Answered 2021-03-21)
+  
+  **[Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)** <a id="idgh62"></a>
+  
+  Currently submodel kind can not be retrieved using Registry-API. This issue will be addressed by standardization working groups. In the meantime, we propose to maintain a dedicated registry for submodel templates within the AAS-infrastructure. Submodel templates can be part of a "singleton-AAS" with a dedicated asset ID used to collect those.
+  
+  (Answered 2021-03-21)
+  
 ## Asset Administration Shell in Detail Series
 
  [Overview over all parts and versions ](https://www.plattform-i40.de/PI40/Redaktion/EN/Standardartikel/specification-administrationshell.html)
