@@ -356,13 +356,13 @@ Further information on qualifiers and the usage in the AASx Package Explorer can
   
  There is a list of submodels coming from IDTA (both finalized and under development) available here: https://industrialdigitaltwin.org/en/content-hub/submodels.
  
-  (Answered 2021-03-21)
+  (Answered 2022-03-21)
   
   **[Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)** <a id="idgh62"></a>
   
   Currently submodel kind can not be retrieved using Registry-API. This issue will be addressed by standardization working groups. In the meantime, we propose to maintain a dedicated registry for submodel templates within the AAS-infrastructure. Submodel templates can be part of a "singleton-AAS" with a dedicated asset ID used to collect those.
   
-  (Answered 2021-03-21)
+  (Answered 2022-03-21)
   
 ## Asset Administration Shell in Detail Series
 
