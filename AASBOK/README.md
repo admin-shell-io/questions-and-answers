@@ -28,6 +28,7 @@
 * [AASX Server](https://github.com/admin-shell-io/aasx-server) (Apache License 2.0; C#)
 * [Web AAS Client](https://github.com/admin-shell-io/web-aas-client) (Apache License 2.0, JavaScript)
 * [AAS Manager](https://github.com/zrgt/pygui40aas/) (GPLv3, Pyhton): Python and QT based AAS browser and editor
+* [FA3ST](https://github.com/FraunhoferIOSB/FAAAST-Service) (Apache License 2.0; Java): AAS implementation with support of various endpoints incl. OPC UA
 
 ### SDKs
 * [Eclipse BaSyx](https://www.eclipse.org/basyx/) (EPLv2; Java, C++, C#)
