@@ -21,6 +21,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Which submodel shall contain the serial number of a device?](#id23)
 - [Is it allowed to have both, Submodel Templates and Submodel Instances, in the same AAS?](#id42)
 - [Is there a comprehensive list of submodel templates available?](#idgh66)
+- [Is there a submodel for modeling of kinematics?](#idgh72)
 
 ### SubmodelElements
 - [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
@@ -363,6 +364,15 @@ Further information on qualifiers and the usage in the AASx Package Explorer can
   Currently submodel kind can not be retrieved using Registry-API. This issue will be addressed by standardization working groups. In the meantime, we propose to maintain a dedicated registry for submodel templates within the AAS-infrastructure. Submodel templates can be part of a "singleton-AAS" with a dedicated asset ID used to collect those.
   
   (Answered 2022-03-21)
+  
+ **[Is there a submodel for modeling of kinematics?](#idgh72)** <a id="idgh72"></a>
+  
+Q: Common file formats for this information already exist (e.g. URDF files) - so perhaps the intention is for this information to simply be referenced or added as supplementary files in the AAS? In any case, some guidance on the best practice would be useful.
+  
+A: We are not aware of any dedicated kinematic models within AAS.
+Embedding files within submodels is always possible using "File" submodel elements with dedicated semantic IDs, as it is, for example, done within the MTP submodel proposal.
+  (Answered 2022-06-13)
+
   
 ## Asset Administration Shell in Detail Series
 
