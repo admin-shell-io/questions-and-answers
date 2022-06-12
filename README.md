@@ -21,7 +21,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Which submodel shall contain the serial number of a device?](#id23)
 - [Is it allowed to have both, Submodel Templates and Submodel Instances, in the same AAS?](#id42)
 - [Is there a comprehensive list of submodel templates available?](#idgh66)
-- [Is there a submodel for modeling of kinematics?](#idgh72)
+- [Is there a submodel for modeling of kinematics?](#idgh73)
 - [Is there an example using a Bill of Material (BOM) submodel to create an AAS for a product/machine which comprises several other assets?](#idgh64)
 
 ### SubmodelElements
@@ -366,7 +366,7 @@ Further information on qualifiers and the usage in the AASx Package Explorer can
   
   (Answered 2022-03-21)
   
- **[Is there a submodel for modeling of kinematics?](#idgh72)** <a id="idgh72"></a>
+ **[Is there a submodel for modeling of kinematics?](#idgh73)** <a id="idgh73"></a>
   
 Q: Common file formats for this information already exist (e.g. URDF files) - so perhaps the intention is for this information to simply be referenced or added as supplementary files in the AAS? In any case, some guidance on the best practice would be useful.
   
