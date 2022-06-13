@@ -372,12 +372,14 @@ Q: Common file formats for this information already exist (e.g. URDF files) - so
   
 A: We are not aware of any dedicated kinematic models within AAS.
 Embedding files within submodels is always possible using "File" submodel elements with dedicated semantic IDs, as it is, for example, done within the MTP submodel proposal.
+  
+ Furthermore, kinimatics can be included as part of the "simulation handover" submodel, see [current state of the submodel definition](https://github.com/admin-shell-io/submodel-templates/tree/main/development/Simulation/).
  
   (Answered 2022-06-13)
 
  **[Is there an example using a Bill of Material (BOM) submodel to create an AAS for a product/machine which comprises several other assets?](#idgh64)** <a id="idgh64"></a>
 
-An example of modeling is provided in the following [publication](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.pdf?__blob=publicationFile&v=5). Example submodels are available [here](http://liabroker.ddns.net:51001/). Note: currently the specification of BOM submodel is ongoing within IDTA's "Bill of Material" working group (reference available [here](https://industrialdigitaltwin.org/en/content-hub/submodels)).
+An example of modeling is provided in the following [publication](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.pdf?__blob=publicationFile&v=5). Example submodels are available [here](http://liabroker.ddns.net:51001/). Note: currently the specification of BOM submodel is ongoing within IDTA's "Bill of Material" working group (reference available [here](https://industrialdigitaltwin.org/en/content-hub/submodels)). For additional information see also [another question](#id42).
   
   (Answered 2022-06-13)
   
