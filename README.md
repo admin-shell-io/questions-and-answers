@@ -47,7 +47,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
 - [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
 
-### Semantics
+### Semantics / ECLASS
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
 - [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
 - [How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)
@@ -56,6 +56,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Are semanticId(s) optional or mandatory?](#id40)
 - [Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)
 - [How to treat ECLASS Quantity Concept in AAS?](#id44)
+- [Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)
 
 ## Answers
 
@@ -382,6 +383,10 @@ Embedding files within submodels is always possible using "File" submodel elemen
 An example of modeling is provided in the following [publication](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.pdf?__blob=publicationFile&v=5). Example submodels are available [here](http://liabroker.ddns.net:51001/). Note: currently the specification of BOM submodel is ongoing within IDTA's "Bill of Material" working group (reference available [here](https://industrialdigitaltwin.org/en/content-hub/submodels)). For additional information see also [another question](#id42).
   
   (Answered 2022-06-13)
+  
+**[Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)** <a id="idgh33"></a>
+  
+No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/Broschueren/2021-06-29_Whitepaper_PlattformI40-ECLASS.pdf) (page 29). New defined elements in ECLASS to define Submodels should be used once available. The only exception is to use application/classification classes in submodels is to denote the category of a product (see ProductClassId property example within the TechnicalData Submodel template).
   
 ## Asset Administration Shell in Detail Series
 
