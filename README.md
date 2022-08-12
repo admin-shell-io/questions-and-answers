@@ -10,6 +10,9 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ## FAQ
 
+### Assets and Asset Types
+- [How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)
+
 ### Asset Administration Shell
 - [What are best practices for creating a system of Asset Administration Shells?](#id42)
 - [Where are examples of AAS available?](#id16)
@@ -382,7 +385,14 @@ Embedding files within submodels is always possible using "File" submodel elemen
 An example of modeling is provided in the following [publication](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.pdf?__blob=publicationFile&v=5). Example submodels are available [here](http://liabroker.ddns.net:51001/). Note: currently the specification of BOM submodel is ongoing within IDTA's "Bill of Material" working group (reference available [here](https://industrialdigitaltwin.org/en/content-hub/submodels)). For additional information see also [another question](#id42).
   
   (Answered 2022-06-13)
-  
+
+
+**[How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)** <a id="idgh13"></a>
+
+For AAS, the relation "derivedFrom" should be used. For assets themselves, no such relation is currently available in the meta-model. If a reference to the asset type is needed, it can be solved by specifying some submodel elements (e.g. relation, property, or entity) which should be defined in context of a submodel template if needed.
+
+  (Answered 2022-08-12)
+
 ## Asset Administration Shell in Detail Series
 
  [Overview over all parts and versions ](https://www.plattform-i40.de/PI40/Redaktion/EN/Standardartikel/specification-administrationshell.html)
