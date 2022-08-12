@@ -38,6 +38,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How should I name a submodel element if there are more than one with the same semanticId?](#id43)
 - [How should array data values within the AAS be represented if array elements have the same semantic ID?](#id45)
 - [How to use qualifiers?](#id46)
+- [How to deal with property values including multiple values?](#ghid36)
 
 ### Identification
 - [What are best practices for creating custom IRI identifiers for generic concepts?](#id18)
@@ -382,6 +383,15 @@ Embedding files within submodels is always possible using "File" submodel elemen
 An example of modeling is provided in the following [publication](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.pdf?__blob=publicationFile&v=5). Example submodels are available [here](http://liabroker.ddns.net:51001/). Note: currently the specification of BOM submodel is ongoing within IDTA's "Bill of Material" working group (reference available [here](https://industrialdigitaltwin.org/en/content-hub/submodels)). For additional information see also [another question](#id42).
   
   (Answered 2022-06-13)
+
+**[How to deal with property values including multiple values?](#ghid36)**  <a id="ghid36"></a>
+ 
+Q: How to deal with "property values" that include a set of values, e.g. seperated by comma? Examples are colors in RGB, coordinates, etc. Is there a specific format for these property elements? How can one transport that a specific format is required?
+Could one use the formula qualifier as RegEx to describe the allowed format? What about more complex property values, i.e. structs?
+
+A: Currently multi-value properties are not available in the metamodel. As option SME list can be used.
+  
+  (Answered 2022-08-12)
   
 ## Asset Administration Shell in Detail Series
 
