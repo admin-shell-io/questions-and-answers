@@ -51,7 +51,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
 - [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
 
-### Semantics
+### Semantics / ECLASS
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
 - [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
 - [How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)
@@ -60,6 +60,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Are semanticId(s) optional or mandatory?](#id40)
 - [Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)
 - [How to treat ECLASS Quantity Concept in AAS?](#id44)
+- [Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)
 
 ## Answers
 
@@ -89,7 +90,7 @@ As of now, references ignore versioning information. In case versioning is essen
 
 **[How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)** <a id="id46"></a><!-- ID: 46 -->
 
-[This AAS example](https://admin-shell-io.github.io/questions-and-answers/Examples/isCaseOf_Examples.aasx) contains a template of "Technical Data" submodel with two properties indicating how alterantive semantic IDs can be used in AAS modeling. For example, the "ManufacturerName" property, has a semantic ID "https://admin-shell.io/sandbox/SG2/TechnicalData/ManufacturerName/1/1" and two isCaseOf references to a ELASS and a CDD IRDIs (the references are within the ConceptDescription).
+[This AAS example](https://admin-shell-io.github.io/questions-and-answers/Examples/isCaseOf_Examples.aasx) contains a template of "Technical Data" submodel with two properties indicating how alterantive semantic IDs can be used in AAS modeling. For example, the "ManufacturerName" property, has a semantic ID "https://admin-shell.io/sandbox/SG2/TechnicalData/ManufacturerName/1/1" and two isCaseOf references to a ECLASS and a CDD IRDIs (the references are within the ConceptDescription).
 
 **[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
 
@@ -404,6 +405,12 @@ A: To our knowledge, JSON/XML can be "lossless" converted to RDF. We consider RD
 The RDF scheme/OWL files (.ttl files) are maintained in the repository “aas-spec” of the github project  admin-shell-io: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf. The mapping rules how to derive the RDF schema from the technology neutral meta model as defined in this specification can be found here: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/json#json-mapping-rules. Example files can be found here: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf/examples.
   
   (Answered 2022-08-15)
+  
+**[Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)** <a id="idgh33"></a>
+  
+No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/Broschueren/2021-06-29_Whitepaper_PlattformI40-ECLASS.pdf) (page 29). New defined elements in ECLASS to define Submodels should be used once available. The only exception is to use application/classification classes in submodels is to denote the category of a product (see ProductClassId property example within the TechnicalData Submodel template).
+
+ (Answered 2022-08-15)
   
 ## Asset Administration Shell in Detail Series
 
