@@ -13,6 +13,7 @@ Please address discussions and proposals via issues and pull requests in the git
 ### Asset Administration Shell
 - [What are best practices for creating a system of Asset Administration Shells?](#id42)
 - [Where are examples of AAS available?](#id16)
+- [Can RDF be used as an interchange format?](#idgh59)
 
 ### Submodels and Submodel Templates
 - [How to define optional and mandatory elements for a submodel of kind=Template?](#id43)
@@ -382,6 +383,14 @@ Embedding files within submodels is always possible using "File" submodel elemen
 An example of modeling is provided in the following [publication](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.pdf?__blob=publicationFile&v=5). Example submodels are available [here](http://liabroker.ddns.net:51001/). Note: currently the specification of BOM submodel is ongoing within IDTA's "Bill of Material" working group (reference available [here](https://industrialdigitaltwin.org/en/content-hub/submodels)). For additional information see also [another question](#id42).
   
   (Answered 2022-06-13)
+  
+**[Can RDF be used as an interchange format?](#idgh59)** <a id="idgh59"></a>
+  
+Q: RDF in the form of Turtle files is presented in the documentation as one option for presentation of AAS data for semantic purposes. However the "Details of the Asset Administration Shell" document refers to the AAS serializations packaged in an AASX file as "either json or xml". I would be interested in knowing if this is intentional or if RDF/Turtle should be considered equal to json or xml for exchange purposes.
+  
+A: To our knowledge, JSON/XML can be "losless" converted to RDF. We consider RDF to be a suitable format for more enhanced applications, e.g. requiring complex queries. So it is just that the focus is a little bit different when to use which format.
+  
+  (Answered 2022-08-15)
   
 ## Asset Administration Shell in Detail Series
 
