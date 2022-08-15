@@ -42,6 +42,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How should I name a submodel element if there are more than one with the same semanticId?](#id43)
 - [How should array data values within the AAS be represented if array elements have the same semantic ID?](#id45)
 - [How to use qualifiers?](#id46)
+- [How to use ValueIDs?](#idgh77)
 - [How to deal with property values including multiple values?](#ghid36)
 
 ### Identification
@@ -416,6 +417,22 @@ The RDF scheme/OWL files (.ttl files) are maintained in the repository “aas-sp
   
   (Answered 2022-08-15)
   
+**[How to use ValueIDs?](#idgh77)** <a id="idgh77"></a>
+  
+Q: How should ValueIDs be using within Submodels to model to model ENUMS from IEC 61360-based semantic dictionaries like CDD and ECLASS?
+  
+A: In scope of AAS modeling, the concept of ValueIDs should be used to map those ENUMS. Typically enum values have a string representation and an IRDI for unique identification. AAS specs state the following usage guide:
+  
+```Constraint AASd-007: if both, the value and the valueId are present then the value needs to be identical to the value of the referenced coded value in valueId.```
+  
+Which can be seen in the example of "IP65" (IEC 61360 english preffered name) as value. Preferred name should be English only - translation can be done by a look-up of the IRDI if needed.
+  
+![example](https://user-images.githubusercontent.com/69786685/180196523-0ebc7827-cfd3-4ba1-91fd-42af476e926e.png)
+  
+We encourage using both the string value and the equivalent ValueID to provide best human and machine-readability. The IRDI of the value list itself should be used in submodel template definitions to restrict the allowed string values.
+  
+  (Answered 2022-08-15)
+
 **[Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)** <a id="idgh33"></a>
   
 No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/Broschueren/2021-06-29_Whitepaper_PlattformI40-ECLASS.pdf) (page 29). New defined elements in ECLASS to define Submodels should be used once available. The only exception is to use application/classification classes in submodels is to denote the category of a product (see ProductClassId property example within the TechnicalData Submodel template).
