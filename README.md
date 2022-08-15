@@ -390,6 +390,8 @@ Q: RDF in the form of Turtle files is presented in the documentation as one opti
   
 A: To our knowledge, JSON/XML can be "lossless" converted to RDF. We consider RDF to be a suitable format for more enhanced applications, e.g. requiring complex queries. So it is just that the focus is a little bit different when to use which format.
   
+The RDF scheme/OWL files (.ttl files) are maintained in the repository “aas-spec” of the github project  admin-shell-io: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf. The mapping rules how to derive the RDF schema from the technology neutral meta model as defined in this specification can be found here: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/json#json-mapping-rules. Example files can be found here: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf/examples.
+  
   (Answered 2022-08-15)
   
 ## Asset Administration Shell in Detail Series
