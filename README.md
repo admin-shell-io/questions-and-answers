@@ -16,6 +16,7 @@ Please address discussions and proposals via issues and pull requests in the git
 ### Asset Administration Shell
 - [What are best practices for creating a system of Asset Administration Shells?](#id42)
 - [Where are examples of AAS available?](#id16)
+- [Can RDF be used as an interchange format?](#idgh59)
 
 ### Submodels and Submodel Templates
 - [How to define optional and mandatory elements for a submodel of kind=Template?](#id43)
@@ -393,6 +394,17 @@ For AAS, the relation "derivedFrom" should be used. For assets themselves, no su
 
   (Answered 2022-08-12)
 
+  
+**[Can RDF be used as an interchange format?](#idgh59)** <a id="idgh59"></a>
+  
+Q: RDF in the form of Turtle files is presented in the documentation as one option for presentation of AAS data for semantic purposes. However the "Details of the Asset Administration Shell" document refers to the AAS serializations packaged in an AASX file as "either json or xml". I would be interested in knowing if this is intentional or if RDF/Turtle should be considered equal to json or xml for exchange purposes.
+  
+A: To our knowledge, JSON/XML can be "lossless" converted to RDF. We consider RDF to be a suitable format for more enhanced applications, e.g. requiring complex queries. So it is just that the focus is a little bit different when to use which format.
+  
+The RDF scheme/OWL files (.ttl files) are maintained in the repository “aas-spec” of the github project  admin-shell-io: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf. The mapping rules how to derive the RDF schema from the technology neutral meta model as defined in this specification can be found here: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/json#json-mapping-rules. Example files can be found here: https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf/examples.
+  
+  (Answered 2022-08-15)
+  
 ## Asset Administration Shell in Detail Series
 
  [Overview over all parts and versions ](https://www.plattform-i40.de/PI40/Redaktion/EN/Standardartikel/specification-administrationshell.html)
