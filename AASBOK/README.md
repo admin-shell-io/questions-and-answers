@@ -23,12 +23,14 @@
 
 ## Tools and SDKs <!-- overview based on https://www.iiconsortium.org/pdf/2021_March_JoI_Open_Source_Drives_Digital_Twin_SA.pdf -->
 ### Tools (which meta-model level, which interfaces (AASX (XML, JSON), OPC UA, RESTful), infrastructure (registry)... )
+* [AAS Specification incl. automatic generated schemas](https://github.com/admin-shell-io/aas-specs)
 * [AASX Package Explorer](https://github.com/admin-shell-io/aasx-package-explorer) (Apache License 2.0; C#) 
   * [Online version](https://admin-shell-io.com:5005/)
 * [AASX Server](https://github.com/admin-shell-io/aasx-server) (Apache License 2.0; C#)
 * [Web AAS Client](https://github.com/admin-shell-io/web-aas-client) (Apache License 2.0, JavaScript)
 * [AAS Manager](https://github.com/zrgt/pygui40aas/) (GPLv3, Pyhton): Python and QT based AAS browser and editor
 * [FA3ST](https://github.com/FraunhoferIOSB/FAAAST-Service) (Apache License 2.0; Java): AAS implementation with support of various endpoints incl. OPC UA
+* [AAS Tester](https://aas-test.ifak.eu/login/?next=/)
 
 ### SDKs
 * [Eclipse BaSyx](https://www.eclipse.org/basyx/) (EPLv2; Java, C++, C#)
