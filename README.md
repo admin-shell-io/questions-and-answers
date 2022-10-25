@@ -2,7 +2,7 @@
 # Asset Administration Shell Frequently Asked Questions List 
 ## Disclaimer
 
-This Q&A has been created by a Task Force of "ZVEI SG Modelle und Standards".
+This Q&A has been initially created by a Task Force of "ZVEI SG Modelle und Standards". It now is maintained by the IDTA Workstream "Best Modeling Practice".
 
 Primary URI for end-user usage and references is: [https://admin-shell-io.github.io/questions-and-answers/](https://admin-shell-io.github.io/questions-and-answers/), cross-link single questions as follows [https://admin-shell-io.github.io/questions-and-answers/#id18](https://admin-shell-io.github.io/questions-and-answers/#id18)
 
