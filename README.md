@@ -27,6 +27,8 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Is there a comprehensive list of submodel templates available?](#idgh66)
 - [Is there a submodel for modeling of kinematics?](#idgh73)
 - [Is there an example using a Bill of Material (BOM) submodel to create an AAS for a product/machine which comprises several other assets?](#idgh64)
+- [How to use different versions of the same submodel (e.g. different versions of the "digital nameplate") which share same IdShort?](#idgh72)
+
 
 ### SubmodelElements
 - [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
@@ -438,6 +440,11 @@ We encourage using both the string value and the equivalent ValueID to provide b
 No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/Broschueren/2021-06-29_Whitepaper_PlattformI40-ECLASS.pdf) (page 29). New defined elements in ECLASS to define Submodels should be used once available. The only exception is to use application/classification classes in submodels is to denote the category of a product (see ProductClassId property example within the TechnicalData Submodel template).
 
  (Answered 2022-08-15)
+ 
+ **[How to use different versions of the same submodel (e.g. different versions of the "digital nameplate") which share same IdShort?](#idgh72)** <a id="idgh72"></a>
+A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id is expected for a GET/submodels/{submodelIdentifier} and no longer the Submodel IdShort. This enables distinguishing between the particular submodel instance.
+
+ (Answered 2022-11-21)
   
 ## Asset Administration Shell in Detail Series
 
