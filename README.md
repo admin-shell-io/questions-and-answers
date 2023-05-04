@@ -55,6 +55,9 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
 - [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
 
+### AAS Registry
+- [What are the right attribute values for Descriptor/endpoint?](#id47)
+
 ### Semantics / ECLASS
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
 - [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
@@ -445,6 +448,25 @@ No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/B
 A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id is expected for a GET/submodels/{submodelIdentifier} and no longer the Submodel IdShort. This enables distinguishing between the particular submodel instance.
 
  (Answered 2022-11-21)
+
+
+ **[What are the right attribute values for 'Descriptor/endpoint'?](#id47)** <a id="id47"></a>
+
+A: The `interface` attribute shall contain the Service Specification Profile. The `protocolInformation` object contains additional information as for instance the intended root endpoint as the URL (`href`), the `endpointProtocol` containing currently only HTTP as only an HTTP AAS API is available, and the `subprotocol` stating which protocol binding is used.
+
+Example:
+```
+{ 
+    "protocolInformation": { 
+        href: http://<...>/submodel
+        endpointProtocol: HTTP, 
+        subprotocol: AAS 
+    }, 
+    "interface": "https://admin-shell.io/aas/API/3/0/SubmodelServiceSpecification/SSP-003" 
+}
+```
+
+ (Answered 2023-05-XX)
   
 ## Asset Administration Shell in Detail Series
 
