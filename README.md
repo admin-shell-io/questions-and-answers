@@ -450,23 +450,46 @@ A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id i
  (Answered 2022-11-21)
 
 
- **[What are the right attribute values for 'Descriptor/endpoint'?](#id47)** <a id="id47"></a>
+ **[What are the right attribute values for 'Descriptor/endpoints'?](#id47)** <a id="id47"></a>
 
-A: The `interface` attribute shall contain the Service Specification Profile. The `protocolInformation` object contains additional information as for instance the intended root endpoint as the URL (`href`), the `endpointProtocol` containing currently only HTTP as only an HTTP AAS API is available, and the `subprotocol` stating which protocol binding is used.
+A: The `interface` attribute shall contain the Service Specification Profile as a full URI. The `protocolInformation` object contains additional information as for instance the intended root endpoint as the URL (`href`), the `endpointProtocol` states whether plain `AAS` or another protocol encapsulating AAS interactions shall be used. Even though the name of the attribute could indicate the usage of e.g. `HTTP` or `FTP`, this kind of communication protocol is already included in the schema of the `href` attribute and therefore not needed.
 
-Example:
+Furthermore, the values for the `securityAttributes` are required by the DIN SPEC 16593-2. However, as long as DIN SPEC 16593-2 definitions are available in more detailes, a common usage pattern is not available and dummy values are recommended ("NONE" or `null`).
+
+Example for a directly accessible Submodel endpoint:
 ```
-{ 
+"endpoints": [
+  { 
+    "interface": "https://admin-shell.io/aas/API/3/0/SubmodelServiceSpecification/SSP-003" ,
     "protocolInformation": { 
-        href: http://<...>/submodel
-        endpointProtocol: HTTP, 
-        subprotocol: AAS 
-    }, 
-    "interface": "https://admin-shell.io/aas/API/3/0/SubmodelServiceSpecification/SSP-003" 
-}
+        "href": "https://<hostname>/path-to-submodel/v3.0/submodel"
+        "endpointProtocol": "AAS",
+        "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+    }
+  }
+]
 ```
 
- (Answered 2023-05-XX)
+In case the endpoints are provided in comjunction with other specifications, e.g., in dataspaces, the remaining fields can be used to provide more information to the client. In particular, the `endpointProtocol` shall state which combination of AAS with which other specification is used. In case IDS connectors control the access to AAS endpoints, `AAS/IDS` ("AAS-over-IDS") can be used. The `subprotocolBody` can for instance provide information on dataspace-specific data asset identifiers as well as authorisation endpoints.
+
+Example for a Submodel endpoint which is offered behind a dataspace connector:
+```
+"endpoints": [
+  { 
+    "interface": " https://admin-shell.io/aas/API/3/0/SubmodelServiceSpecification/SSP-003",
+    "protocolInformation": {
+        "href": "https://provider-edc.data.plane/shells/{aasIdentifier}/submodels/{submodelIdentifier}/submodel",
+        "endpointProtocol": "AAS/IDS",
+        "endpointProtocolVersion: "V3.0",
+        "subprotocol": "IDS",
+        "subprotocolBody": "asset:prop:id=123;idsEndpoint=http://edc.control.plane/",
+        "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+    }
+  }
+]
+```
+
+ (Answered 2023-05-25)
   
 ## Asset Administration Shell in Detail Series
 
