@@ -525,6 +525,44 @@ Example for a Submodel provided through a submodel repository:
 }
 ```
 
+A service implementing a complete profile, e.g. "https://admin-shell.io/aas/API/3/0/SubmodelRepositoryServiceSpecification/SSP-002" (only READ API Operations), needs to furthermore outline the location of the additionally required APIs (Serialization and Description). Each of the endpoints is therefore stated in an own entry in the endpoints array. In particular for the Serialization API, it is good practice to already include all needed parameters - "submodelIds" or additionally "aasIds" for an AAS Repository - to simplify the call for the clients.
+
+Example for a Submodel provided through a submodel repository in conjunction with the Serialization and Description APIs:
+```
+{ 
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-REPOSITORY-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodels/submodel-123"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    },
+    { 
+      "interface": "DESCRIPTION-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/description"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    },
+    { 
+      "interface": "SERIALIZE-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/serialization?submodelIds=c3VibW9kZWwtMTIz"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    }
+  ]
+}
+```
+
 
 In case the endpoints are provided in conjunction with other specifications, e.g., in dataspaces, the remaining fields can be used to provide more information to the client. In particular, the `subprotocol` shall state which combination of AAS with which other specification is used. In case IDS connectors control the access to AAS endpoints, `IDS` ("AAS-over-IDS") can be used. The `subprotocolBody` can for instance provide information on dataspace-specific data asset identifiers as well as authorisation endpoints.
 
