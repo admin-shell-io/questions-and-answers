@@ -452,73 +452,103 @@ A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id i
 
  **[What are the right attribute values for 'Descriptor/endpoints'?](#id47)** <a id="id47"></a>
 
-A: The `interface` attribute shall contain the Service Specification Profile as a full URI. The `protocolInformation` object contains additional information as for instance the intended root endpoint as the URL (`href`), the `endpointProtocol` states whether plain `AAS` or another protocol encapsulating AAS interactions shall be used. Even though the name of the attribute could indicate the usage of e.g. `HTTP` or `FTP`, this kind of communication protocol is already included in the schema of the `href` attribute and therefore not needed.
+A: The `interface` attribute shall contain the Service Specification identifier together with a version tag. The `protocolInformation` object contains additional information as for instance the intended root endpoint as the URL (`href`) and how to reach it. `endpointProtocol` states which protocol shall be used. It is intended for clients to select the proper socket library without needing to parse the `href`content. 
 
-The `endpointProtocolVersion` contains the AAS API version of the provided endpoint. Even though a client could derive this information also from the profile URI from the `interface` value or from the version segment in the `href` URL, the explicit statement reduces the risk of unintended mismatches of client and server versions.
+The `endpointProtocolVersion` contains the major.minor version of the `endpointProtocol` entry. For HTTP, versions `1.0`, `1.1`, or `2.0` are possible entries.
 
-Furthermore, the values for the `securityAttributes` are required by the DIN SPEC 16593-2. However, as long as DIN SPEC 16593-2 definitions are available in more detailes, a common usage pattern is not available and dummy values are recommended ("NONE" or `null`).
+Furthermore, the values for the `securityAttributes` are required by the DIN SPEC 16593-2. However, as long as DIN SPEC 16593-2 definitions are not available in more details, a common usage pattern is not available and dummy values are recommended ("NONE" or `null`).
 
-Example for a directly accessible Submodel endpoint:
+Example for a Submodel endpoint:
 ```
-"endpoints": [
-  { 
-    "interface": "https://admin-shell.io/aas/API/3/0/SubmodelServiceSpecification/SSP-003" ,
-    "protocolInformation": { 
-        "href": "https://<hostname>/path-to-submodel/v3.0/submodel"
-        "endpointProtocol": "AAS",
-        "endpointProtocolVersion: "V3.0",
-        "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+{ 
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodel"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
     }
-  }
-]
+  ]
+}
 ```
 
-Example for a directly accessible Submodel endpoint with different supported API versions:
+Example for a Submodel endpoint providing different API versions:
 ```
-"endpoints": [
-  { 
-    "interface": "https://admin-shell.io/aas/API/3/0/SubmodelServiceSpecification/SSP-003" ,
-    "protocolInformation": { 
-        "href": "https://<hostname>/path-to-submodel/v3.0/submodel"
-        "endpointProtocol": "AAS",
-        "endpointProtocolVersion: "V3.0",
-        "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+{
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/v3.0/submodel"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    },
+    { 
+      "interface": "SUBMODEL-3.1" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/v3.1/submodel"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
     }
-  },
-  { 
-    "interface": "https://admin-shell.io/aas/API/3/1/SubmodelServiceSpecification/SSP-003" ,
-    "protocolInformation": { 
-        "href": "https://<hostname>/path-to-submodel/v3.1/submodel"
-        "endpointProtocol": "AAS",
-        "endpointProtocolVersion: "V3.1",
-        "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+  ]
+}
+```
+
+The endpoint descriptions for repository services look slightly different. Note that the `href` entry should not end with the `/submodel` or `/submodels` suffix but at the submodel identifier position. This is due to the fact that the endpoint declaration of a submodel descriptor always targets the location of the respective submodel and not the one of the hosting server/repository.
+
+Therefore, the `interface` entry is critical for the client to construct the correct endpoints for the different API Operations on top of the submodels.
+
+Example for a Submodel provided through a submodel repository:
+```
+{ 
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-REPOSITORY-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodels/submodel-123"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
     }
-  }
-]
+  ]
+}
 ```
 
-In case the endpoints are provided in comjunction with other specifications, e.g., in dataspaces, the remaining fields can be used to provide more information to the client. In particular, the `endpointProtocol` shall state which combination of AAS with which other specification is used. In case IDS connectors control the access to AAS endpoints, `AAS/IDS` ("AAS-over-IDS") can be used. The `subprotocolBody` can for instance provide information on dataspace-specific data asset identifiers as well as authorisation endpoints.
 
-It is in the responsibility of the organisation defining the non-AAS specifications how to declare the version(s) of the offered AAS endpoints. It is not recommended for client developers to parse the endpoint versions from the `interface` or `href` values.
+In case the endpoints are provided in conjunction with other specifications, e.g., in dataspaces, the remaining fields can be used to provide more information to the client. In particular, the `subprotocol` shall state which combination of AAS with which other specification is used. In case IDS connectors control the access to AAS endpoints, `IDS` ("AAS-over-IDS") can be used. The `subprotocolBody` can for instance provide information on dataspace-specific data asset identifiers as well as authorisation endpoints.
 
-Example for a Submodel endpoint which is offered behind a dataspace connector:
+Example for a Submodel endpoint which is offered through a dataspace connector:
 ```
-"endpoints": [
-  { 
-    "interface": " https://admin-shell.io/aas/API/3/0/SubmodelServiceSpecification/SSP-003",
-    "protocolInformation": {
-        "href": "https://provider-edc.data.plane/v3.0/shells/{aasIdentifier}/submodels/{submodelIdentifier}/submodel",
-        "endpointProtocol": "AAS/IDS",
-        "endpointProtocolVersion: "V0.8",
-        "subprotocol": "IDS",
-        "subprotocolBody": "asset:prop:id=123;idsEndpoint=http://edc.control.plane/",
-        "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+{
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-3.0",
+      "protocolInformation": {
+          "href": "https://provider-edc.data.plane/v3.0/shells/{aasIdentifier}/submodels/{submodelIdentifier}/submodel",
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "subprotocol": "IDS",
+          "subprotocolBody": "asset:prop:id=123;idsEndpoint=http://edc.control.plane/",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
     }
-  }
-]
+  ]
+}
 ```
 
- (Answered 2023-05-25)
+ (Answered 2023-6-02)
   
 ## Asset Administration Shell in Detail Series
 
