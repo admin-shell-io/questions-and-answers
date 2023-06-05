@@ -468,7 +468,7 @@ Example for a Submodel endpoint:
       "protocolInformation": { 
           "href": "https://<hostname>/path-to-submodel/api/v3.0/submodel"
           "endpointProtocol": "HTTP",
-          "endpointProtocolVersion: "1.1",
+          "endpointProtocolVersion: [ "1.1" ],
           "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
       }
     }
