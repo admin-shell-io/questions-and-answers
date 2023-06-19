@@ -17,6 +17,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [What are best practices for creating a system of Asset Administration Shells?](#id42)
 - [Where are examples of AAS available?](#id16)
 - [Can RDF be used as an interchange format?](#idgh59)
+- [Values for externalSubjectId within SpecificAssetId?](#idgh78)
 
 ### Submodels and Submodel Templates
 - [How to define optional and mandatory elements for a submodel of kind=Template?](#id43)
@@ -28,7 +29,6 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Is there a submodel for modeling of kinematics?](#idgh73)
 - [Is there an example using a Bill of Material (BOM) submodel to create an AAS for a product/machine which comprises several other assets?](#idgh64)
 - [How to use different versions of the same submodel (e.g. different versions of the "digital nameplate") which share same IdShort?](#idgh72)
-
 
 ### SubmodelElements
 - [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
@@ -65,6 +65,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)
 - [How to treat ECLASS Quantity Concept in AAS?](#id44)
 - [Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)
+- [What are strategies to match semantic IDs?](#idgh54)
 
 ## Answers
 
@@ -419,6 +420,21 @@ The RDF scheme/OWL files (.ttl files) are maintained in the repository “aas-sp
   
   (Answered 2022-08-15)
   
+**[Values for externalSubjectId within SpecificAssetId?](#idgh78)** <a id="idgh78"></a>
+  
+Q: What values shall be used for externalSubjectId within SpecificAssetId?
+
+A: Not all specific IDs shall be visible to all users when looking up Asset Administration Shells. For exam-ple, there typically is a manufacturer-part-ID, but several customer-part-IDs and only the customer shall be able to search for the digital twin via this specific asset ID. The term "subject" is taken from ABAC (Attribute Based Access Control). It is assumed that the "subject" can be described by a unique ID.
+
+ ```
+ {"name": "SerialNumber", "value": "12345678", "externalSubjectId": ""} //discoverable for everyone
+{"name": "CustomerPartID", "value": "C1#7234", "externalSubjectId": "BPN_Company1"} //discoverable for Company 1
+{"name": "CustomerPartID", "value": "0789_Company2", "externalSubjectId": "BPN_Company2"} //discoverable for Company 2
+```
+
+
+  (Answered 2023-06-18)
+  
 **[How to use ValueIDs?](#idgh77)** <a id="idgh77"></a>
   
 Q: How should ValueIDs be using within Submodels to model to model ENUMS from IEC 61360-based semantic dictionaries like CDD and ECLASS?
@@ -442,9 +458,20 @@ No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/B
  (Answered 2022-08-15)
  
  **[How to use different versions of the same submodel (e.g. different versions of the "digital nameplate") which share same IdShort?](#idgh72)** <a id="idgh72"></a>
-A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id is expected for a GET/submodels/{submodelIdentifier} and no longer the Submodel IdShort. This enables distinguishing between the particular submodel instance.
+
+ A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id is expected for a GET/submodels/{submodelIdentifier} and no longer the Submodel IdShort. This enables distinguishing between the particular submodel instance.
 
  (Answered 2022-11-21)
+  
+**[What are strategies to match semantic IDs?](#idgh54)** <a id="idgh54"></a>
+  
+Q: What are strategies to match semantic IDs?
+
+ A: Please refer to section "4.4 Matching Strategies" of [AASiD part 1 v3.0](https://industrialdigitaltwin.org/wp-content/uploads/2023/04/IDTA-01001-3-0_SpecificationAssetAdministrationShell_Part1_Metamodel.pdf). Also, the consensus  of our group is that isCaseOf has no impact on semantic equivalence and can be ignored for automatic matching strategies.
+
+ (Answered 2023-06-19)
+  
+ 
   
 ## Asset Administration Shell in Detail Series
 
