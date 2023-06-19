@@ -345,14 +345,14 @@ In general: The aim of the basic AAS concept is not about defining semantics, it
  
  **[How should array data values within the AAS be represented if array elements have the same semantic ID?](#id45)** <a id="id45"></a>
 
-Short-term solution:
+Pre 3.0 version of the metamodel:
 Use "Blob"-element, e.g., "[1,2,3,4,5]" having a "serialized" JSON-value format (see upcoming time series submodel template). The data types of array's content, e.g. string, float or integer, can be defined using custom semantic ID of the submodel element.
 (Design decision: take "Blob" instead of String in order not to overload generic UIs with representation of possibly long arrays.)
 
-Mid- to long-term solution:
-A change to metamodel of the AAS is required. A work item has been passed to the sub working group.
-
-(Answered 2021-05-31)
+Since 3.0 verison of the meamodel:
+Submodel Element List element should be used, cf. "5.3.7.17 Submodel Element List Attributes" of [AASiD Part 1 3.0](https://industrialdigitaltwin.org/wp-content/uploads/2023/04/IDTA-01001-3-0_SpecificationAssetAdministrationShell_Part1_Metamodel.pdf)
+  
+(Answered 2021-05-31, updated 2023-06-19)
 
  **[How to use qualifiers?](#id46)** <a id="id46"></a>
 
