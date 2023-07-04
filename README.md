@@ -67,6 +67,10 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)
 - [What are strategies to match semantic IDs?](#idgh54)
 
+### Code Generation
+- [Which code generators work for which programming language?](#id55)
+- [Which code generators have known issues with the AAS?](#id56)
+
 ## Answers
 
 **[How to define optional and mandatory elements for a submodel of kind=Template?](#id43)** <a id="id43"></a><!-- ID: 43 -->
@@ -471,6 +475,55 @@ Q: What are strategies to match semantic IDs?
 
  (Answered 2023-06-19)
   
+
+**[Which code generators work for which programming language?](#id55)** <a id="id55"></a>
+  
+Q: Which code generators work for which programming language?
+
+ A: Generally, the code generators for server- or client-side code as well for the different programming languages behave surprisingly different to each other. Even though the common foundation is OpenAPI, some used patterns work well for one generator while others cannot understand them. Therefore, this list is without any guarantuee of completeness and is only true for the currently available versions of both the API specification and the respective generators. Also note that even though the SwaggerHub code generation option is handy, it does not always work in the same way as the generators in their latest open source releases.
+
+***Server-side:***
+
+ | Language/Framework | Code Generator | API Versions | Comment |
+ |:--|:--|:--|:--|
+ | Spring (Java)|  | V3.0.1 | works |
+ | jax-rs (Java)|  | V3.0.1 | works |
+ | .NET |  | V3.0.1 | works |
+
+***Client-side:***
+
+ | Language/Framework | Code Generator | API Versions | Comment |
+ |:--|:--|:--|:--|
+ | jax-rs (Java)|  | V3.0.1 | works |
+ | .NET |  | V3.0.1 | works |
+
+
+ (Answered 2023-07-31)
+  
+
+**[Which code generators have known issues with the AAS?](#id56)** <a id="id56"></a>
+  
+Q: Which code generators have known issues with the AAS?
+
+ A: 
+***Server-side:***
+
+ | Language/Framework | Code Generator | API Versions | Comment |
+ |:--|:--|:--|:--|
+ | Spring (Java)|  | V3.0.1 | response 'default' creates methods twice |
+ | FLASK (Python) |  | V3.0.1 | throws internal exception |
+ | |  |  |  |
+
+
+***Client-side:***
+
+ | Language/Framework | Code Generator | API Versions | Comment |
+ |:--|:--|:--|:--|
+ | |  | |  |
+ | .NET |  |  | ??? |
+
+
+ (Answered 2023-07-31)
  
   
 ## Asset Administration Shell in Detail Series
