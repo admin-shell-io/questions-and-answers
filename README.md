@@ -484,7 +484,7 @@ Example for a Submodel endpoint providing different API versions:
     { 
       "interface": "SUBMODEL-3.0" ,
       "protocolInformation": { 
-          "href": "https://<hostname>/path-to-submodel/v3.0/submodel"
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodel"
           "endpointProtocol": "HTTP",
           "endpointProtocolVersion: [ "1.1" ],
           "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
@@ -493,7 +493,7 @@ Example for a Submodel endpoint providing different API versions:
     { 
       "interface": "SUBMODEL-3.1" ,
       "protocolInformation": { 
-          "href": "https://<hostname>/path-to-submodel/v3.1/submodel"
+          "href": "https://<hostname>/path-to-submodel/api/v3.1/submodel"
           "endpointProtocol": "HTTP",
           "endpointProtocolVersion: [ "1.1" ],
           "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
@@ -564,7 +564,7 @@ Example for a Submodel provided through a submodel repository in conjunction wit
 ```
 
 
-In case the endpoints are provided in conjunction with other specifications, e.g., in dataspaces, the remaining fields can be used to provide more information to the client. In particular, the `subprotocol` shall state which combination of AAS with which other specification is used. In case IDS connectors control the access to AAS endpoints, `IDS` ("AAS-over-IDS") can be used. The `subprotocolBody` can for instance provide information on dataspace-specific data asset identifiers as well as authorisation endpoints.
+In case the endpoints are provided in conjunction with other specifications, e.g., in dataspaces, the remaining fields can be used to provide more information to the client. In particular, the `subprotocol` shall state which combination of AAS with which other specification is used. In case IDS connectors control the access to AAS endpoints, `DSP` (read like "AAS over the Dataspace Protocol") can be used. The `subprotocolBody` can for instance provide information on dataspace-specific data asset identifiers as well as authorisation endpoints.
 
 Example for a Submodel endpoint which is offered through a dataspace connector:
 ```
@@ -574,10 +574,10 @@ Example for a Submodel endpoint which is offered through a dataspace connector:
     { 
       "interface": "SUBMODEL-3.0",
       "protocolInformation": {
-          "href": "https://provider-edc.data.plane/v3.0/shells/{aasIdentifier}/submodels/{submodelIdentifier}/submodel",
+          "href": "https://provider-edc.data.plane/api/v3.0/shells/{aasIdentifier}/submodels/{submodelIdentifier}/submodel",
           "endpointProtocol": "HTTP",
           "endpointProtocolVersion: [ "1.1" ],
-          "subprotocol": "IDS",
+          "subprotocol": "DSP",
           "subprotocolBody": "asset:prop:id=123;idsEndpoint=http://edc.control.plane/",
           "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
       }
