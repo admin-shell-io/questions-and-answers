@@ -535,7 +535,7 @@ Example for a Submodel provided through a submodel repository in conjunction wit
     { 
       "interface": "SUBMODEL-REPOSITORY-3.0" ,
       "protocolInformation": { 
-          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodels/submodel-123"
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodels/c3VibW9kZWwtMTIz"
           "endpointProtocol": "HTTP",
           "endpointProtocolVersion: [ "1.1" ],
           "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
@@ -574,11 +574,12 @@ Example for a Submodel endpoint which is offered through a dataspace connector:
     { 
       "interface": "SUBMODEL-3.0",
       "protocolInformation": {
-          "href": "https://provider-edc.data.plane/api/v3.0/shells/{aasIdentifier}/submodels/{submodelIdentifier}/submodel",
+          "href": "https://provider-edc.data.plane/some-submodel/api/v3.0/submodel",
           "endpointProtocol": "HTTP",
           "endpointProtocolVersion: [ "1.1" ],
           "subprotocol": "DSP",
-          "subprotocolBody": "asset:prop:id=123;idsEndpoint=http://edc.control.plane/",
+          "subprotocolBody": "id=123;dspEndpoint=http://edc.control.plane/",
+          "subprotocolBodyEncoding": "plain",
           "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
       }
     }
