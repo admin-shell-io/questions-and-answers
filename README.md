@@ -55,6 +55,9 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
 - [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
 
+### AAS Registry
+- [What are the right attribute values for Descriptor/endpoint?](#id47)
+
 ### Semantics / ECLASS
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
 - [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
@@ -462,6 +465,146 @@ No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/B
  A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id is expected for a GET/submodels/{submodelIdentifier} and no longer the Submodel IdShort. This enables distinguishing between the particular submodel instance.
 
  (Answered 2022-11-21)
+
+
+ **[What are the right attribute values for 'Descriptor/endpoints'?](#id47)** <a id="id47"></a>
+
+A: The `interface` attribute shall contain the interface identifier together with a version tag. The `protocolInformation` object contains additional information, e.g., the endpoint URL where the implemented interface is located (`href`). `endpointProtocol` states which protocol shall be used. It is intended for clients to select the proper socket library without needing to parse the `href` content. 
+
+The `endpointProtocolVersion` contains the major.minor version of the `endpointProtocol` entry. For HTTP, versions `1.0`, `1.1`, or `2.0` are possible entries. In case several versions of the stated protocol can be served, a list of the respective ones can be added in the value array.
+
+Furthermore, the values for the `securityAttributes` are required by the DIN SPEC 16593-2. However, as long as DIN SPEC 16593-2 definitions are not available in more details, a common usage pattern is not available and dummy values are recommended ("NONE" or `null`).
+
+Example for a Submodel endpoint:
+```
+{ 
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodel"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: [ "1.1" ],
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    }
+  ]
+}
+```
+
+Example for a Submodel endpoint providing different API versions:
+```
+{
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodel"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: [ "1.1" ],
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    },
+    { 
+      "interface": "SUBMODEL-3.1" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.1/submodel"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: [ "1.1" ],
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    }
+  ]
+}
+```
+
+The endpoint descriptions for repository services look slightly different. Note that the `href` entry should not end with the `/submodel` or `/submodels` suffix but at the submodel identifier position. This is due to the fact that the endpoint declaration of a submodel descriptor always targets the location of the respective submodel and not the one of the hosting server/repository.
+
+Therefore, the `interface` entry is critical for the client to construct the correct endpoints for the different API Operations on top of the submodels.
+
+Example for a Submodel provided through a submodel repository:
+```
+{ 
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-REPOSITORY-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodels/submodel-123"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: [ "1.1" ],
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    }
+  ]
+}
+```
+
+A service implementing a complete profile, e.g. "https://admin-shell.io/aas/API/3/0/SubmodelRepositoryServiceSpecification/SSP-002" (only READ API Operations), may want to outline the location of the additionally required APIs (Serialization and Description). Each of the endpoints is therefore stated in an own entry in the endpoints array. In particular for the Serialization API, it is good practice to already include all needed parameters - "submodelIds" or additionally "aasIds" for an AAS Repository - to simplify the call for the clients.
+
+Example for a Submodel provided through a submodel repository in conjunction with the Serialization and Description APIs:
+```
+{ 
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-REPOSITORY-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/submodels/c3VibW9kZWwtMTIz"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: [ "1.1" ],
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    },
+    { 
+      "interface": "DESCRIPTION-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/description"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: "1.1",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    },
+    { 
+      "interface": "SERIALIZE-3.0" ,
+      "protocolInformation": { 
+          "href": "https://<hostname>/path-to-submodel/api/v3.0/serialization?submodelIds=c3VibW9kZWwtMTIz"
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: [ "1.1" ],
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    }
+  ]
+}
+```
+
+
+In case the endpoints are provided in conjunction with other specifications, e.g., in dataspaces, the remaining fields can be used to provide more information to the client. In particular, the `subprotocol` shall state which combination of AAS with which other specification is used. In case IDS connectors control the access to AAS endpoints, `DSP` (read like "AAS over the Dataspace Protocol") can be used. The `subprotocolBody` can for instance provide information on dataspace-specific data asset identifiers as well as authorisation endpoints.
+
+Example for a Submodel endpoint which is offered through a dataspace connector:
+```
+{
+  ...
+  "endpoints": [
+    { 
+      "interface": "SUBMODEL-3.0",
+      "protocolInformation": {
+          "href": "https://provider-edc.data.plane/some-submodel/api/v3.0/submodel",
+          "endpointProtocol": "HTTP",
+          "endpointProtocolVersion: [ "1.1" ],
+          "subprotocol": "DSP",
+          "subprotocolBody": "id=123;dspEndpoint=http://edc.control.plane/",
+          "subprotocolBodyEncoding": "plain",
+          "securityAttributes": [ { "type": "NONE", "key": "NONE", "value": "NONE" } ]
+      }
+    }
+  ]
+}
+```
+
+ (Answered 2023-6-02)
   
 **[What are strategies to match semantic IDs?](#idgh54)** <a id="idgh54"></a>
   
