@@ -46,7 +46,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How to use qualifiers?](#id46)
 - [How to use ValueIDs?](#idgh77)
 - [How to deal with property values including multiple values?](#ghid36)
-- [How to deal with lack of individual data types for Submodel Element Collections?](#ghid101)
+- [How to define concrete semantics for arbitrary submodel elements based on generic semantics?](#ghid101)
 
 ### Identification
 - [What are best practices for creating custom IRI identifiers for generic concepts?](#id18)
@@ -406,14 +406,19 @@ A: Currently multi-value properties are not available in the metamodel. As optio
   
   (Answered 2022-08-12)
 
-**[How to deal with lack of individual data types for Submodel Element Collections?](#ghid101)** <a id="ghid101"></a>
+**[How to define concrete semantics for arbitrary submodel elements based on generic semantics?](#ghid101)** <a id="ghid101"></a>
 
-Q: In the AAS one defines Submodel Elements (simple as well as complex), but no individual data types for them. If we now consider, for example, a complex "location" Submodel Element Collection with simple double properties for the coordinates. Then one must assign individual semanticIds to this kind of construct depending on the usage to allow an individual, context-dependent meaning of the SMEC. Example: A robot has a location SMEC for its base and one for its tool center point. Both should be described by individual semanticIds (i.e., concept descriptions). On the other hand, both describe locations, which should be able to be offset against each other in generic program code (e.g., calculate distance of the locations). How is this possible without a common data type "Location" for both SMEC?
+Q: In different submodels one may use different concrete concepts which are based on a generic concept symantics.
+If we consider, for example, a generic "position" Submodel Element Collection (SMC) with simple properties for the coordinates with data type double, e.g., X, Y, and Z with a dedicated semantic id.
+However, during the modeling individual semanticIds referncing to this generic position concept are needed depending on the usage to allow a concrete, context-dependent meaning. 
+Example: A robot has a position SMC for its base and one for its tool center point.
+Both should be described by individual semanticIds (i.e., concept descriptions). 
+On the other hand, both describe locations, which should be able to be offset against each other in generic program code (e.g., calculate distance of the locations). How is this possible without a common data type "position" for both SMC?
 
 A: We recommend:
-* Use the individual semanticID for the individual SMC to denote "location at base" or "locaction tool center point"
-* Use supplementalSemanticID to descibe for each SMC that it is a "location".
-* For the ConceptDescription it is similiar. Create 2 ConceptDescriptions for the individual SMC, and use isCaseOf to reference a 3rd ConceptDescription for "location".
+* Use the individual semanticID for the concrete SMC to denote "position at base" or "position tool center point"
+* Use supplementalSemanticID to descibe for each SMC that it is a generic "position", i.e., X, Y, Z.
+* For the ConceptDescription it is similiar. Create 2 ConceptDescriptions for the individual concrete SMC, and use isCaseOf to reference a 3rd ConceptDescription for generic "location".
   
 (Answered 2023-12-18)
   
