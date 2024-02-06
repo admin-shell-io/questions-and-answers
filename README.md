@@ -503,7 +503,7 @@ Further information on qualifiers and the usage in the AASx Package Explorer can
               "value": "urn:another-example03:8ad569a7"
             }
           ],
-		  "referredSemanticId": {
+          "referredSemanticId": {
             "keys": [
               {
                 "type": "GlobalReference",
