@@ -51,6 +51,9 @@ Please address discussions and proposals via issues and pull requests in the git
 - [What are best practices for creating custom IRI identifiers for generic concepts?](#id18)
 - [Is the following IRI-based ID with a query parameter valid “http://vendor.com/suffx?a=abc&b=xyz”?](#id38)
 
+### Referencing
+- [What is the relationship between text serialization of "Reference" and other serializations like json or xml?](#idr1)
+
 ### Infrastructure and Versioning
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
 - [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
@@ -286,6 +289,104 @@ Yes, this is a valid ID.
 
 (Answered: 2020-09-21)
 
+
+**[What is the relationship between text serialization of "Reference" and other serializations like json or xml?](#idr1)** <a id="idr1"></a><!-- ID: idr1 -->
+
+For xml, json or rdf serializations just have a look at 
+https://github.com/admin-shell-io/aas-specs/tree/master/schemas/xml/examples/generated/reference
+or
+https://github.com/admin-shell-io/aas-specs/tree/master/schemas/json/examples/generated/Reference
+or
+https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf/examples/generated/Reference
+resp.
+
+
+Now lets have a look at some of the examples given in the IDTA-01001-3-0 Metamodel specification for text serializations:
+
+`(Submodel)https://example.com/aas/1/1/1234859590, (SubmodelElementList)Documents, (SubmodelElementCollection)0, (MultiLanguageProperty)Title`
+
+This is identical to the JSON representation:
+```json
+"<attribute with Type 'Reference'": {
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://example.com/aas/1/1/1234859590"
+          }
+          {
+            "type": "SubmodelElementList",
+            "value": "Documents"
+          }
+          {
+            "type": "SubmodelElementCollection",
+            "value": "0"
+          }
+          {
+            "type": "MultiLanguageProperty",
+            "value": "Title"
+          }
+        ],
+        "type": "ModelReference"
+      },
+```
+
+`[ExternalRef](GlobalReference)0173-1#02-BAA120#008`
+
+is identical to the JSON representation:
+```json
+"<attribute with Type 'Reference'": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0173-1#02-BAA120#008"
+          }
+         ],
+        "type": "ExternalReference"
+      },
+```
+
+`[ModelRef](ConceptDescription)0173-1#02-BAA120#008`
+is identical to the JSON represenation:
+```json
+"<attribute with Type 'Reference'": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "value": "0173-1#02-BAA120#008"
+          }
+         ],
+        "type": "ModelReference"
+      },
+```
+
+The corresponding xml representation would look like this:
+```xml
+<attribute with Type 'Reference'>
+				<type>ModelReference</type>
+				<keys>
+					<key>
+						<type>ConceptDescription</type>
+						<value>0173-1#02-BAA120#008</value>
+					</key>
+				</keys>
+</attribute with Type 'Reference'>
+```
+
+There is a third way of building paths to model elements. In Part 2 API of the AAS Specification there are so-called "idShort-Paths" defined (see Chapter 12.4 in V3.0 Addressing Resources).
+For the example 
+
+`(Submodel)https://example.com/aas/1/1/1234859590, (SubmodelElementList)Documents, (SubmodelElementCollection)0, (MultiLanguageProperty)Title`
+
+we would have the idShort-Path
+
+`Documents[0].Title`
+
+Using it in an http/REST call needs base64url encoding for identifiers and URL encoding for idShort-Paths leads to
+`GET /submodels/<Base64URL encoded https://example.com/aas/1/1/1234859590>/submodel/submodelElements/<URL encoded Documents[0].Title>`
+i.e.
+`GET /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9hYXMvMS8xLzEyMzQ4NTk1OTA/submodel/submodelElements/Documents%5B0%5D.Title`
+
+(Answered: 2024-02-06)
 
 **[Are semanticId(s) optional or mandatory?](#id40)** <a id="id40"></a><!-- ID: 40 -->
 
