@@ -515,7 +515,9 @@ Further information on qualifiers and the usage in the AASx Package Explorer can
           "type": "ModelReference"
         }
 	```
-	
+ 
+  (Answered: 2024-02-06)
+  
  **[Is there a submodel for modeling of kinematics?](#idgh73)** <a id="idgh73"></a>
   
 Q: Common file formats for this information already exist (e.g. URDF files) - so perhaps the intention is for this information to simply be referenced or added as supplementary files in the AAS? In any case, some guidance on the best practice would be useful.
