@@ -71,7 +71,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Are semanticId(s) optional or mandatory?](#id40)
 - [Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)
 - [How to treat ECLASS Quantity Concept in AAS?](#id44)
-- [Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)
+- [Should one use ECLASS application classes to define semantics of a submodel?](#idgh33)
 - [What are strategies to match semantic IDs?](#idgh54)
 
 ## Answers
@@ -562,7 +562,7 @@ We encourage using both the string value and the equivalent ValueID to provide b
   
   (Answered 2022-08-15)
 
-**[Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)** <a id="idgh33"></a>
+**[Should one use ECLASS application classes to define semantics of a submodel?](#idgh33)** <a id="idgh33"></a>
   
 No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/Broschueren/2021-06-29_Whitepaper_PlattformI40-ECLASS.pdf) (page 29). New defined elements in ECLASS to define Submodels should be used once available. The only exception is to use application/classification classes in submodels is to denote the category of a product (see ProductClassId property example within the TechnicalData Submodel template).
 
