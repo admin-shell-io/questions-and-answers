@@ -366,13 +366,13 @@ is identical to the JSON represenation:
 The corresponding xml representation would look like this:
 ```xml
 <attribute with Type 'Reference'>
-				<type>ModelReference</type>
-				<keys>
-					<key>
-						<type>ConceptDescription</type>
-						<value>0173-1#02-BAA120#008</value>
-					</key>
-				</keys>
+   <type>ModelReference</type>
+     <keys>
+        <key>
+          <type>ConceptDescription</type>
+          <value>0173-1#02-BAA120#008</value>
+        </key>
+      <keys>
 </attribute with Type 'Reference'>
 ```
 
