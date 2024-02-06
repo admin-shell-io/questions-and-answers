@@ -57,10 +57,13 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ### Infrastructure and Versioning
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
-- [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
+- [Is it possible to determine the semanticID of a submodel from an AAS Server or an AAS Repository Server without loading the actual submodel?](#idgh63)
+
 
 ### AAS Registry
 - [What are the right attribute values for Descriptor/endpoint?](#id47)
+- [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel, e.g. via the AAS-repository API?](#idgh62)
+
 
 ### Semantics / ECLASS
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
@@ -481,12 +484,38 @@ Further information on qualifiers and the usage in the AASx Package Explorer can
  
   (Answered 2022-03-21)
   
-  **[Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)** <a id="idgh62"></a>
+  **[Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel, e.g. via the AAS-repository API?](#idgh62)** <a id="idgh62"></a>
   
   Currently submodel kind can not be retrieved using Registry-API. This issue will be addressed by standardization working groups. In the meantime, we propose to maintain a dedicated registry for submodel templates within the AAS-infrastructure. Submodel templates can be part of a "singleton-AAS" with a dedicated asset ID used to collect those.
   
   (Answered 2022-03-21)
   
+  **[Is it possible to determine the semanticID of a submodel from an AAS Server or an AAS Repository Server without loading the actual submodel?](#idgh63)** <a id="idgh63"></a>
+
+	Yes, it is possible if the data provider add the "referredSemanticId" to the reference to the submodel within the AAS. Example:
+	
+	```json
+      "submodels": [
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "urn:another-example03:8ad569a7"
+            }
+          ],
+		  "referredSemanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate"
+              }
+            ],
+			"type": "ExternalReference"
+            },
+          "type": "ModelReference"
+        }
+	```
+	
  **[Is there a submodel for modeling of kinematics?](#idgh73)** <a id="idgh73"></a>
   
 Q: Common file formats for this information already exist (e.g. URDF files) - so perhaps the intention is for this information to simply be referenced or added as supplementary files in the AAS? In any case, some guidance on the best practice would be useful.
