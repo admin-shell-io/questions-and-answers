@@ -53,6 +53,7 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ### Referencing
 - [What is the relationship between text serialization of "Reference" and other serializations like json or xml?](#idr1)
+- [When are two references considered to match?](#idr2)
 
 ### Infrastructure and Versioning
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
@@ -385,6 +386,12 @@ Using it in an http/REST call needs base64url encoding for identifiers and URL e
 `GET /submodels/<Base64URL encoded https://example.com/aas/1/1/1234859590>/submodel/submodelElements/<URL encoded Documents[0].Title>`
 i.e.
 `GET /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9hYXMvMS8xLzEyMzQ4NTk1OTA/submodel/submodelElements/Documents%5B0%5D.Title`
+
+(Answered: 2024-02-06)
+
+**[When are two references considered to match?](#idr2)** <a id="idr2"></a><!-- ID: idr2 -->
+
+For the matching algorithm see chapter on "Matching Strategies": "Matching Algorithm for References" in Part 1 of the Specification of the Asset Administration Shell. Also examples are given.
 
 (Answered: 2024-02-06)
 
