@@ -419,8 +419,10 @@ A: We recommend:
 * Use the individual semanticID for the concrete SMC to denote "position at base" or "position tool center point"
 * Use supplementalSemanticID to descibe for each SMC that it is a generic "position", i.e., X, Y, Z.
 * For the ConceptDescription it is similiar. Create 2 ConceptDescriptions for the individual concrete SMC, and use isCaseOf to reference a 3rd ConceptDescription for generic "location".
-  
-(Answered 2023-12-18)
+
+Furthermore, consider re-using existent IEC 61360-compatible concept descriptions, e.g., ECLASS "AXIS 1D".
+
+  (Answered 2023-12-18)
   
 
 **[How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)** <a id="idgh13"></a>
