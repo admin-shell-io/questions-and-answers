@@ -52,12 +52,19 @@ Please address discussions and proposals via issues and pull requests in the git
 - [What are best practices for creating custom IRI identifiers for generic concepts?](#id18)
 - [Is the following IRI-based ID with a query parameter valid “http://vendor.com/suffx?a=abc&b=xyz”?](#id38)
 
+### Referencing
+- [What is the relationship between text serialization of "Reference" and other serializations like json or xml?](#idr1)
+- [When are two references considered to match?](#idr2)
+
 ### Infrastructure and Versioning
 - [How does the version of a submodel impact referencing of a submodel?](#idgh14)
-- [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)
+- [Is it possible to determine the semanticID of a submodel from an AAS Server or an AAS Repository Server without loading the actual submodel?](#idgh63)
+
 
 ### AAS Registry
 - [What are the right attribute values for Descriptor/endpoint?](#id47)
+- [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel, e.g. via the AAS-repository API?](#idgh62)
+
 
 ### Semantics / ECLASS
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
@@ -68,7 +75,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Are semanticId(s) optional or mandatory?](#id40)
 - [Can semantic ID(s) be used without defining a concept description within the AAS package?](#id41)
 - [How to treat ECLASS Quantity Concept in AAS?](#id44)
-- [Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)
+- [Should one use ECLASS application classes to define semantics of a submodel?](#idgh33)
 - [What are strategies to match semantic IDs?](#idgh54)
 
 ## Answers
@@ -288,6 +295,110 @@ Yes, this is a valid ID.
 (Answered: 2020-09-21)
 
 
+**[What is the relationship between text serialization of "Reference" and other serializations like json or xml?](#idr1)** <a id="idr1"></a><!-- ID: idr1 -->
+
+For xml, json or rdf serializations just have a look at 
+https://github.com/admin-shell-io/aas-specs/tree/master/schemas/xml/examples/generated/reference
+or
+https://github.com/admin-shell-io/aas-specs/tree/master/schemas/json/examples/generated/Reference
+or
+https://github.com/admin-shell-io/aas-specs/tree/master/schemas/rdf/examples/generated/Reference
+resp.
+
+
+Now lets have a look at some of the examples given in the IDTA-01001-3-0 Metamodel specification for text serializations:
+
+`(Submodel)https://example.com/aas/1/1/1234859590, (SubmodelElementList)Documents, (SubmodelElementCollection)0, (MultiLanguageProperty)Title`
+
+This is identical to the JSON representation:
+```json
+"<attribute with Type 'Reference'": {
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://example.com/aas/1/1/1234859590"
+          }
+          {
+            "type": "SubmodelElementList",
+            "value": "Documents"
+          }
+          {
+            "type": "SubmodelElementCollection",
+            "value": "0"
+          }
+          {
+            "type": "MultiLanguageProperty",
+            "value": "Title"
+          }
+        ],
+        "type": "ModelReference"
+      },
+```
+
+`[ExternalRef](GlobalReference)0173-1#02-BAA120#008`
+
+is identical to the JSON representation:
+```json
+"<attribute with Type 'Reference'": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "0173-1#02-BAA120#008"
+          }
+         ],
+        "type": "ExternalReference"
+      },
+```
+
+`[ModelRef](ConceptDescription)0173-1#02-BAA120#008`
+is identical to the JSON represenation:
+```json
+"<attribute with Type 'Reference'": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "value": "0173-1#02-BAA120#008"
+          }
+         ],
+        "type": "ModelReference"
+      },
+```
+
+The corresponding xml representation would look like this:
+```xml
+<attribute with Type 'Reference'>
+   <type>ModelReference</type>
+     <keys>
+        <key>
+          <type>ConceptDescription</type>
+          <value>0173-1#02-BAA120#008</value>
+        </key>
+      <keys>
+</attribute with Type 'Reference'>
+```
+
+There is a third way of building paths to model elements. In Part 2 API of the AAS Specification there are so-called "idShort-Paths" defined (see Chapter 12.4 in V3.0 Addressing Resources).
+For the example 
+
+`(Submodel)https://example.com/aas/1/1/1234859590, (SubmodelElementList)Documents, (SubmodelElementCollection)0, (MultiLanguageProperty)Title`
+
+we would have the idShort-Path
+
+`Documents[0].Title`
+
+Using it in an http/REST call needs base64url encoding for identifiers and URL encoding for idShort-Paths leads to
+`GET /submodels/<Base64URL encoded https://example.com/aas/1/1/1234859590>/submodel/submodelElements/<URL encoded Documents[0].Title>`
+i.e.
+`GET /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9hYXMvMS8xLzEyMzQ4NTk1OTA/submodel/submodelElements/Documents%5B0%5D.Title`
+
+(Answered: 2024-02-06)
+
+**[When are two references considered to match?](#idr2)** <a id="idr2"></a><!-- ID: idr2 -->
+
+For the matching algorithm see chapter on "Matching Strategies": "Matching Algorithm for References" in Part 1 of the Specification of the Asset Administration Shell. Also examples are given.
+
+(Answered: 2024-02-06)
+
 **[Are semanticId(s) optional or mandatory?](#id40)** <a id="id40"></a><!-- ID: 40 -->
 
 Although semanticIds are optional it is recommended to add a semantic reference (semanticId) whenever possible: without semanticId there is no semantic interoperability. IdShort of elements can be standardized as is done for some elements in submodel templates. However, this is not sufficient. Additionally, a semanticId is needed, for example to include version information or information about variants about the same element.
@@ -374,11 +485,39 @@ Further information on qualifiers and the usage in the AASx Package Explorer can
  
   (Answered 2022-03-21)
   
-  **[Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel from via AAS-repository API?](#idgh62)** <a id="idgh62"></a>
+  **[Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel, e.g. via the AAS-repository API?](#idgh62)** <a id="idgh62"></a>
   
   Currently submodel kind can not be retrieved using Registry-API. This issue will be addressed by standardization working groups. In the meantime, we propose to maintain a dedicated registry for submodel templates within the AAS-infrastructure. Submodel templates can be part of a "singleton-AAS" with a dedicated asset ID used to collect those.
   
   (Answered 2022-03-21)
+  
+  **[Is it possible to determine the semanticID of a submodel from an AAS Server or an AAS Repository Server without loading the actual submodel?](#idgh63)** <a id="idgh63"></a>
+
+	Yes, it is possible if the data provider add the "referredSemanticId" to the reference to the submodel within the AAS. Example:
+	
+	```json
+      "submodels": [
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "urn:another-example03:8ad569a7"
+            }
+          ],
+          "referredSemanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate"
+              }
+            ],
+			"type": "ExternalReference"
+            },
+          "type": "ModelReference"
+        }
+	```
+ 
+  (Answered: 2024-02-06)
   
  **[Is there a submodel for modeling of kinematics?](#idgh73)** <a id="idgh73"></a>
   
@@ -473,7 +612,7 @@ We encourage using both the string value and the equivalent ValueID to provide b
   
   (Answered 2022-08-15)
 
-**[Should one use ECLASS application classes in define semantics of a submodel?](#idgh33)** <a id="idgh33"></a>
+**[Should one use ECLASS application classes to define semantics of a submodel?](#idgh33)** <a id="idgh33"></a>
   
 No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/Broschueren/2021-06-29_Whitepaper_PlattformI40-ECLASS.pdf) (page 29). New defined elements in ECLASS to define Submodels should be used once available. The only exception is to use application/classification classes in submodels is to denote the category of a product (see ProductClassId property example within the TechnicalData Submodel template).
 
