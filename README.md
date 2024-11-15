@@ -67,7 +67,7 @@ Please address discussions and proposals via issues and pull requests in the git
 
 
 ### Semantics / ECLASS
-- [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN446#..)” be used for documentation?](#id8)
+- [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
 - [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
 - [How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)
 - [What shall be entered for the semanticId attribute if a related concept description does not exist in ECLASS or IEC CDD?](#id3)
