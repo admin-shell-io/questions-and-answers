@@ -532,7 +532,7 @@ Embedding files within submodels is always possible using "File" submodel elemen
 
  **[Is there an example using a Bill of Material (BOM) submodel to create an AAS for a product/machine which comprises several other assets?](#idgh64)** <a id="idgh64"></a>
 
-An example of modeling is provided in the following [publication](https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/AAS_Reference_Modelling.pdf?__blob=publicationFile&v=5). Example submodels are available [here](http://liabroker.ddns.net:51001/). Note: currently the specification of BOM submodel is ongoing within IDTA's "Bill of Material" working group (reference available [here](https://industrialdigitaltwin.org/en/content-hub/submodels)). For additional information see also [another question](#id42).
+An example of modeling is provided in the following [submodel template specification](https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2024/06/IDTA-02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf). Example submodels are available [here](https://github.com/admin-shell-io/submodel-templates/blob/main/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/). For additional information see also [another question](#id42).
   
   (Answered 2022-06-13)
 
