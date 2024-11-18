@@ -577,9 +577,10 @@ We consider creating an alterntive, separate property for the unit, e.g., "heigh
 
 **[How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)** <a id="idgh13"></a>
 
-For AAS, the relation "derivedFrom" should be used. For assets themselves, no such relation is currently available in the meta-model. If a reference to the asset type is needed, it can be solved by specifying some submodel elements (e.g. relation, property, or entity) which should be defined in context of a submodel template if needed.
+For AAS, the relation "derivedFrom" should be used. 
+For assets, since meta-model V3, there is an attribute AssetInformation/assetType that may hold the globalAssetId of the type asset (for Assets with assetKind = Instance).
 
-  (Answered 2022-08-12)
+  (Answered 2024-11-15)
 
   
 **[Can RDF be used as an interchange format?](#idgh59)** <a id="idgh59"></a>
