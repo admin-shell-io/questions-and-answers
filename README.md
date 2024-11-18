@@ -620,9 +620,9 @@ No, see the [cited document](https://eclass.eu/fileadmin/Redaktion/pdf-Dateien/B
  
  **[How to use different versions of the same submodel (e.g. different versions of the "digital nameplate") which share same IdShort?](#idgh72)** <a id="idgh72"></a>
 
- A: In the current API specification AAS Part 2 V1.0RC03 the unique Submodel Id is expected for a GET/submodels/{submodelIdentifier} and no longer the Submodel IdShort. This enables distinguishing between the particular submodel instance.
+ A: In the current API specification AAS Part 2 V3.0.3 the unique base64url-encoded Submodel Id is expected for a GET /submodels/{submodelIdentifier} and no longer the Submodel IdShort. This enables distinguishing between the particular submodel instance.
 
- (Answered 2022-11-21)
+ (Answered 2024-11-15)
 
 
  **[What are the right attribute values for 'Descriptor/endpoints'?](#id47)** <a id="id47"></a>
