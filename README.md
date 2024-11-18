@@ -534,7 +534,7 @@ Embedding files within submodels is always possible using "File" submodel elemen
 
 An example of modeling is provided in the following [submodel template specification](https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2024/06/IDTA-02011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf). Example submodels are available [here](https://github.com/admin-shell-io/submodel-templates/blob/main/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/). For additional information see also [another question](#id42).
   
-  (Answered 2022-06-13)
+  (Answered 2024-11-18)
 
 **[How to deal with property values including multiple values?](#ghid36)**  <a id="ghid36"></a>
  
