@@ -47,6 +47,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How to use ValueIDs?](#idgh77)
 - [How to deal with property values including multiple values?](#ghid36)
 - [How to define concrete semantics for arbitrary submodel elements based on generic semantics?](#ghid101)
+- [How to define non-physical/non-SI units for properties in AAS?](#ghid113)
 
 ### Identification
 - [What are best practices for creating custom IRI identifiers for generic concepts?](#id18)
@@ -562,7 +563,17 @@ A: We recommend:
 Furthermore, consider re-using existent IEC 61360-compatible concept descriptions, e.g., ECLASS "AXIS 1D".
 
   (Answered 2023-12-18)
-  
+
+**[How to define non-physical/non-SI units for properties in AAS?](#ghid113)** <a id="ghid113"></a>
+
+Q: Is there a best practice approach to define units for properties which are not a physical or SI unit?
+For example in an purchase order in which five pallets of a product are ordered, there is a property "OrderQuantity"=5 and the unit would be "pallet".
+Should the unit in such cases be defined in the IEC 61360, even if SI-based units are recommended to use, or rather in a separate property of type string called, e.g., "OrderQuantityUnit"?
+
+A: The concept of units is independent of whether they are physical or non-physical.
+It is preferable to define your property with its corresponding value, for example, 'height' with a 'value=5' and to use the DataSpecificationIec61360. The DataSpecificationIec61360 provides additional properties including 'unit' (e.g., "km") and 'unitID' (e.g., 0173-1#05-AAA595#004). The unitID allows to find the definition of the unit. Multiple international catalogs for Units of Measure exist, e.g., ECLASS, IEC CDD, UNECE. The UNECE catalog includes, e.g., "dozen piece", "pallet". An updated version of a DataSpecification for Units of Measure is underway and will be published shortly. This will provide additional attributes for describing units.
+
+We consider creating an alterntive, separate property for the unit, e.g., "height_unit" an **antipattern**. This modelling approach can be commonly found in solutions that are not based on the IEC 61360. It is also used in some Submodel Templates. While this gives the author more modelling freedom, it has a poorer semantic quality. In the latter approach, the tools require implicit knowledge that the value of Property A is the unit of Property B.
 
 **[How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)** <a id="idgh13"></a>
 
