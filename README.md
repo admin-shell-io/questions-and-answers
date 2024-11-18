@@ -106,7 +106,7 @@ As of now, references ignore versioning information. In case versioning is essen
 
 **[How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)** <a id="id46"></a><!-- ID: 46 -->
 
-**Note**: This answer is only valid vor V2 of the meta-model. We work on re-phrasing it for V3.
+**Note**: This answer is only valid for V2 of the meta-model. We work on re-phrasing it for V3.
 
 [This AAS example](https://admin-shell-io.github.io/questions-and-answers/Examples/isCaseOf_Examples.aasx) contains a template of "Technical Data" submodel with two properties indicating how alterantive semantic IDs can be used in AAS modeling. For example, the "ManufacturerName" property, has a semantic ID "https://admin-shell.io/sandbox/SG2/TechnicalData/ManufacturerName/1/1" and two isCaseOf references to a ECLASS and a CDD IRDIs (the references are within the ConceptDescription).
 
@@ -284,7 +284,7 @@ The standardized [submodel template "Generic Frame for Technical Data for Indust
 
 **[How shall properties be entered which are defined both in ECLASS and in CDD?](#id34)** <a id="id34"></a><!-- ID: 34 -->
 
-**Note**: This answer is only valid vor V2 of the meta-model. We work on re-phrasing it for V3.
+**Note**: This answer is only valid for V2 of the meta-model. We work on re-phrasing it for V3.
 
 If definitions for several product application areas are needed (e.g. ECLASS for factory automation and CDD for process automation), the related properties (e.g. ManufacturerName) shall be entered twice. At each of the properties one of the concept descriptions (ECLASS or CDD) is entered. The name of a property shall be either counted up (e.g. ManufactureName1) or extended by a suffix (e.g. ManufacturerNameCDD).
 
