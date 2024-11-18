@@ -43,7 +43,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [Where shall images (products or icons) of an asset be stored, e.g., for the use in dashboards?](#id31)
 - [How should I name a submodel element if there are more than one with the same semanticId?](#id43)
 - [How should array data values within the AAS be represented if array elements have the same semantic ID?](#id45)
-- [How to use qualifiers?](#id46)
+- [How to use qualifiers?](#id99)
 - [How to use ValueIDs?](#idgh77)
 - [How to deal with property values including multiple values?](#ghid36)
 - [How to define concrete semantics for arbitrary submodel elements based on generic semantics?](#ghid101)
@@ -106,6 +106,8 @@ AAS provides two approaches for versioning:
 As of now, references ignore versioning information. In case versioning is essential, the versioning information must be part of the element's ID.
 
 **[How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)** <a id="id46"></a><!-- ID: 46 -->
+
+**Note**: This answer is only valid for V2 of the meta-model. We work on re-phrasing it for V3.
 
 [This AAS example](https://admin-shell-io.github.io/questions-and-answers/Examples/isCaseOf_Examples.aasx) contains a template of "Technical Data" submodel with two properties indicating how alterantive semantic IDs can be used in AAS modeling. For example, the "ManufacturerName" property, has a semantic ID "https://admin-shell.io/sandbox/SG2/TechnicalData/ManufacturerName/1/1" and two isCaseOf references to a ECLASS and a CDD IRDIs (the references are within the ConceptDescription).
 
@@ -282,6 +284,8 @@ The standardized [submodel template "Generic Frame for Technical Data for Indust
 (Updated: 2021-02-08)
 
 **[How shall properties be entered which are defined both in ECLASS and in CDD?](#id34)** <a id="id34"></a><!-- ID: 34 -->
+
+**Note**: This answer is only valid for V2 of the meta-model. We work on re-phrasing it for V3.
 
 If definitions for several product application areas are needed (e.g. ECLASS for factory automation and CDD for process automation), the related properties (e.g. ManufacturerName) shall be entered twice. At each of the properties one of the concept descriptions (ECLASS or CDD) is entered. The name of a property shall be either counted up (e.g. ManufactureName1) or extended by a suffix (e.g. ManufacturerNameCDD).
 
@@ -470,7 +474,7 @@ Submodel Element List element should be used, cf. "5.3.7.17 Submodel Element Lis
   
 (Answered 2021-05-31, updated 2023-06-19)
 
- **[How to use qualifiers?](#id46)** <a id="id46"></a>
+ **[How to use qualifiers?](#id99)** <a id="id99"></a>
 
 In this Repository, you can find a qualifier example in the folder "Examples". It contains an AAS (Qualifier_Examples.aasx) with a Submodel called "QualifierExampleSubmodel". 
 1. In this Submodel the property "MaxRotationSpeed" has two example qualifiers (ExpressionSemantic=ASSURANCE_1 and PredicateRelation=GREATER_THAN_0). They are extracted from [DIN SPEC 92000](https://www.beuth.de/en/technical-rule/din-spec-92000/320981982) and state that the Submodel assures, that the asset's MaxRotationSpeed is greater than 30 1/min.
