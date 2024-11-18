@@ -567,7 +567,7 @@ Furthermore, consider re-using existent IEC 61360-compatible concept description
 **[How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)** <a id="idgh13"></a>
 
 For AAS, the relation "derivedFrom" should be used. 
-For assets, since meta-model V3, there is an attribute AssetInformation/typeAsset that may hold the globalAssetId of the type asset.
+For assets, since meta-model V3, there is an attribute AssetInformation/assetType that may hold the globalAssetId of the type asset.
 
   (Answered 2024-11-15)
 
