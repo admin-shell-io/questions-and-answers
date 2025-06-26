@@ -579,12 +579,15 @@ It is preferable to define your property with its corresponding value, for examp
 
 We consider creating an alterntive, separate property for the unit, e.g., "height_unit" an **antipattern**. This modelling approach can be commonly found in solutions that are not based on the IEC 61360. It is also used in some Submodel Templates. While this gives the author more modelling freedom, it has a poorer semantic quality. In the latter approach, the tools require implicit knowledge that the value of Property A is the unit of Property B.
 
-**[How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)** <a id="idgh13"></a>
+**[How to define relationships between asset instance and asset type resp. AAS instance and AAS type?](#idgh13)** <a id="idgh13"></a>
 
-For AAS, the relation "derivedFrom" should be used. 
-For assets, since meta-model V3, there is an attribute AssetInformation/assetType that may hold the globalAssetId of the type asset (for Assets with assetKind = Instance).
+For AAS, use the relation `derivedFrom` of an instance AAS to link the AAS (type) ID.<br />
+_cf. [Specification of the Asset Administration Shell Part 1: Metamodel](https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.1/spec-metamodel/core.html#aas_attributes)_
 
-  (Answered 2024-11-15)
+For assets, in case of `AssetInformation/assetKind = Instance`, use `AssetInformation/assetType` to specify the `AssetInformation/globalAssetId` of the type asset.<br />
+_since AAS Metamodel V3, cf. [Specification of the Asset Administration Shell Part 1: Metamodel](https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.1/spec-metamodel/core.html#asset-information-attributes)_
+
+  (answered 2024-11-15 | updated 2025-06-26 | AAS Metamodel v3)
 
   
 **[Can RDF be used as an interchange format?](#idgh59)** <a id="idgh59"></a>
