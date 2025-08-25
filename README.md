@@ -113,21 +113,21 @@ As of now, references ignore versioning information. In case versioning is essen
 
 **[What are best practices for creating a system of Asset Administration Shells?](#idgh42)** <a id="idgh42"></a><!-- ID: 42 -->
 
-There are currently two ways to create/reference further AAS:
-1) Using a BOM (Bill of Material) submodel, a dedicated submodel with self- or co-managed assets
+There are currently two ways to create/reference AAS:
+1) Creating a submodel by using the [submodel template "Hierarchical Structures enabling Bills of Material" (BOM)](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material)
 
-  > Note: Scope of the BOM submodel are relations between *assets* and not *AASs*. BOM submodel defined “isPartOf” and “isIdentical” relation types between assets.
+  > Note: Scope of the BOM submodel are relations between *assets* and not *Asset Administration Shells*. The submodel defines "SameAs", "IsPartOf" and "HasPart" relationships between assets.
 
-   *  Self-managed assets have own asset ID which can be used in AAS infrastructure (e.g., a registry) to query available AAS.
-   *  Co-managed assets have no asset ID and own AAS.
+   *  Self-managed assets have their own `globalAssetId` which can be used in an AAS infrastructure (AAS Discovery Service, AAS registry & AAS repository) to query available AAS.
+   *  Co-managed assets do not have an `globalAssetId` and do not have an own AAS.
  
-&nbsp;&nbsp;&nbsp;&nbsp;*Advantages*: BOM-AAS is self-contained and has no “external” dependencies such as references to AAS, probably will be used as blueprint for further submodels.
+&nbsp;&nbsp;&nbsp;&nbsp;*Advantages*: Asset Administration Shells with BOM submodel are self-contained and have no "external" dependencies such as references to AAS. They can be used as blueprint for further AAS resp. submodels.
 
-&nbsp;&nbsp;&nbsp;&nbsp;*Disadvantages*: AAS infrastructure for resolution of asset ID to AAS is needed.
+&nbsp;&nbsp;&nbsp;&nbsp;*Disadvantages*: AAS infrastructure (AAS Discovery Service, AAS registry & AAS repository) for resolving of `globalAssetIds` to an AAS is needed (cf. [Specification of the Asset Administration Shell Part 2: Application Programming Interfaces](https://industrialdigitaltwin.io/aas-specifications/index/home/index.html)).
 
-2)  Direct references to external AAS or Submodels using ReferenceElements or RelationshipElements. We currently do not recommend this method in case of lacking generalizability and creation of tight couplings between AAS (by taking over the “resolution” part).
+2)  Direct references to (external) AAS or submodels using submodel elements like `ReferenceElement` or `RelationshipElement`. This is not recommend cause of lacking generalizability and creation of tight couplings between AAS.
 
-(Answered: 2021-06-28)
+(Answered: 2021-06-28 | Updated: 2025-08-25 | AAS Metamodel v3)
 
 **[How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)** <a id="id2"></a><!-- ID: 2 -->
 
