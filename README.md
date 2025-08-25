@@ -14,7 +14,7 @@ Please address discussions and proposals via issues and pull requests in the git
 - [How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)
 
 ### Asset Administration Shell
-- [What are best practices for creating a system of Asset Administration Shells?](#id42)
+- [What are best practices for creating a system of Asset Administration Shells?](#idgh42)
 - [Where are examples of AAS available?](#id16)
 - [Can RDF be used as an interchange format?](#idgh59)
 - [Values for externalSubjectId within SpecificAssetId?](#idgh78)
@@ -111,7 +111,7 @@ As of now, references ignore versioning information. In case versioning is essen
 
 [This AAS example](https://admin-shell-io.github.io/questions-and-answers/Examples/isCaseOf_Examples.aasx) contains a template of "Technical Data" submodel with two properties indicating how alterantive semantic IDs can be used in AAS modeling. For example, the "ManufacturerName" property, has a semantic ID "https://admin-shell.io/sandbox/SG2/TechnicalData/ManufacturerName/1/1" and two isCaseOf references to a ECLASS and a CDD IRDIs (the references are within the ConceptDescription).
 
-**[What are best practices for creating a system of Asset Administration Shells?](#id42)** <a id="id42"></a><!-- ID: 42 -->
+**[What are best practices for creating a system of Asset Administration Shells?](#idgh42)** <a id="idgh42"></a><!-- ID: 42 -->
 
 There are currently two ways to create/reference further AAS:
 1) Using a BOM (Bill of Material) submodel, a dedicated submodel with self- or co-managed assets
