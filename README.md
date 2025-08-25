@@ -125,7 +125,7 @@ There are currently two ways to create/reference AAS:
 
 &nbsp;&nbsp;&nbsp;&nbsp;*Disadvantages*: AAS infrastructure (AAS Discovery Service, AAS registry & AAS repository) for resolving of `globalAssetIds` to an AAS is needed (cf. [Specification of the Asset Administration Shell Part 2: Application Programming Interfaces](https://industrialdigitaltwin.io/aas-specifications/index/home/index.html)).
 
-2)  Direct references to (external) AAS or submodels using submodel elements like `ReferenceElement` or `RelationshipElement`. This is not recommend cause of lacking generalizability and creation of tight couplings between AAS.
+2) Direct references to (external) AAS or submodels using submodel elements like `ReferenceElement` or `RelationshipElement`. This is not recommend cause of lacking generalizability and creation of tight couplings between AAS.
 
 (Answered: 2021-06-28 | Updated: 2025-08-25 | AAS Metamodel v3)
 
