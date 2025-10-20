@@ -241,7 +241,7 @@ Furthermore, in practical implementations we advise to “filter” out protocol
 
 **[Which submodel shall contain the serial number of a device?](#id23)** <a id="id23"></a><!-- ID: 23 -->
 
-Serial number is a submodel element of “Identification” submodel referenced in AAS for an asset with assetKind=Instance, i.e. instance’s AAS. 
+Serial number is a submodel element (`idShort` = `SerialNumber`) of “DigitalNameplate” submodel referenced in AAS for an asset with assetKind=Instance, i.e. instance’s AAS. It should also include semanticID as defined in [submodel template definition](https://industrialdigitaltwin.io/idta-submodel-templates/Digital%20Nameplate%20for%20Industrial%20Equipment/3.0/index.html#_properties_of_the_submodel_nameplate), i.e., `0112/2///61987#ABA951#009`.
 
 (Answered: 2020-08-19)
 
