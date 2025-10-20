@@ -66,8 +66,8 @@ Please address discussions and proposals via issues and pull requests in the git
 - [What are the right attribute values for Descriptor/endpoint?](#id47)
 - [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel, e.g. via the AAS-repository API?](#idgh62)
 
-
 ### Semantics / ECLASS
+- [When is it possible to re-use ECLASS blocks as semantic IDs of SMCs?](#idgh44)
 - [How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)
 - [How to refer to semantic concepts of existing standards like VDI 2770 properties or OPC UA companion specifications (e.g. “Serial number” property from OPC UA DI companion spec)?](#id27)
 - [How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)
@@ -162,6 +162,12 @@ This also holds true for proprietary dictionaries. For example, the id of a prop
 Alternatively, an agile flexible approach using GITHUB has been defined. You may store your CDs there which are defined as “http://admin-shell.io/<sub-namespace>[/<version>[/<revision>]]/<ShortId>”. The working draft repository is placed at https://github.com/admin-shell-io/id.
 
 (Answered: 2020-08-13)
+
+**[When is it possible to re-use ECLASS blocks as semantic IDs of SMCs?](#ighd44)** <a id="idgh44"></a><!-- ID: gh44 -->
+
+[ECLASS Semantic Transport document](https://industrialdigitaltwin.org/en/wp-content/uploads/sites/2/2024/10/2024-10_IDTA_ECLASS_Semantic_Transport_ECLASS_in_AAS_1.0.pdf) shows example of using the block in Section 6.2. Note that the semantic ID of the block should be changed in case of adding or changing properties included in the ECLASS block.
+
+(Updated: 2025-07-21)
 
 **[How shall the ECLASS group “Zusatzdokumentation (e.g. IRDI 0173-1#02-ADN464#..)” be used for documentation?](#id8)** <a id="id8"></a><!-- ID: 8 -->
 
