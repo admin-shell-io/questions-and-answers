@@ -444,7 +444,7 @@ Submodel Templates guide the creation of Submodel Instances. Although the specif
 **[How should I name a submodel element if there are more than one with the same semanticId?](#id43)** <a id="id43"></a>
 
 There are several ways to deal with the topic of naming in the case that there is a set of elements (Referable/idShort), each with the same semanticId:
-* just number the elements (Example: Document01, Document02, Document{nn})
+* use SubmodelElementList as a collection of the element
 * assign a speaking name to each (Example: WheelFrontLeft, WheelFrontRight, WheelRearLeft, WheelRearRight)
 Via display names (introduced in V3.0RC01 Referable/displayName, it is also possible to assign more speaking names in a later stage if needed)
 
