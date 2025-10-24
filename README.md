@@ -11,7 +11,7 @@ Please address discussions and proposals via issues and pull requests in the git
 ## FAQ
 
 ### Assets and Asset Types
-- [How to define the relationship between asset instance and asset type wrt. corresponding submodels?](#idgh13)
+- [How to define relationships between asset instance and asset type resp. AAS instance and AAS type?](#idgh13)
 
 ### Asset Administration Shell
 - [What are best practices for creating a system of Asset Administration Shells?](#idgh42)
@@ -63,7 +63,7 @@ Please address discussions and proposals via issues and pull requests in the git
 
 
 ### AAS Registry
-- [What are the right attribute values for Descriptor/endpoint?](#id47)
+- [What are the right attribute values for 'Descriptor/endpoints'?](#id47)
 - [Is it possible to determine submodel kind (i.e., Template or Instance) from a Registry without loading the actual submodel, e.g. via the AAS-repository API?](#idgh62)
 
 ### Semantics / ECLASS
