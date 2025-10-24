@@ -136,7 +136,7 @@ A typical usage for logical references is in the description of a topology of th
 
 (Answered: 2020-08-13)
 
-**[If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#id5)** <a id="id5"></a><a id="id23"></a><!-- ID: 5, 23 -->
+**[If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#id5)** <a id="id5"></a><!-- ID: 5 -->
 
 Submodels shall be as independent as possible so that they can be changed and developed separately.
 Consequently, the same properties shall be copied to another submodel and references shall not be used in such case. 
