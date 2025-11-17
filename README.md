@@ -602,7 +602,7 @@ Or in other words, is an AASX file containing above snippet but not the correspo
 
 A: Our understanding of the aasx specification is that an aasx with an aas-xml or aas-json file contained in it defining a relative path in a submodel element of type "File" but does not include the file is invalid:
 
-See aas-suppl relationship type in https://admin-shell-io.github.io/aas-specs-antora/IDTA-01005/v3.1/aasx.html#ecma-376-rels (Note 3).
+See aas-suppl relationship type in [https://admin-shell-io.github.io/aas-specs-antora/IDTA-01005/v3.1/aasx.html#ecma-376-rels](https://industrialdigitaltwin.io/aas-specifications/IDTA-01005/v3.1/aasx.html#ecma-376-rels) (Note 3).
 
 (Answered 2025-11-17 | AAS Metamodel v3)
 
