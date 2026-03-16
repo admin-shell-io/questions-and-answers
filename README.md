@@ -32,7 +32,6 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ### SubmodelElements
 - [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
-- [If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#)
 - [How to use physical units for quantifiable properties?](#id7)
 - [How to treat values of Properties with values in multiple languages?](#id9)
 - [How shall a document be handled which includes different content according to VDI 2770 and the related DocumentClassIDs?](#id10)
