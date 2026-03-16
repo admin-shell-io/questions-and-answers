@@ -225,7 +225,7 @@ e.g. the indication of multiplicity of allowed components for modelling by “gr
 
 Examples of several suppliers are found at: http://admin-shell-io.com/samples/ 
 
-Note that referenced instance AASs mostly comply  to the version 2 of the AAS metamodel. 
+Note that referenced instance AASs mostly comply to the version 2 of the AAS metamodel.
 
 (Answered: 2020-08-13, updated: 2026-03-16)
 
