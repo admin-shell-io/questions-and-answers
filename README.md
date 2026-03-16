@@ -225,7 +225,9 @@ e.g. the indication of multiplicity of allowed components for modelling by “gr
 
 Examples of several suppliers are found at: http://admin-shell-io.com/samples/ 
 
-(Answered: 2020-08-13)
+Note that referenced instance AASs mostly comply  to the version 2 of the AAS metamodel. 
+
+(Answered: 2020-08-13, updated: 2026-03-16)
 
 **[What are best practices for creating custom IRI identifiers for generic concepts?](#id18)** <a id="id18"></a><!-- ID: 18 -->
 
