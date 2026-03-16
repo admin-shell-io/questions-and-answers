@@ -32,7 +32,6 @@ Please address discussions and proposals via issues and pull requests in the git
 
 ### SubmodelElements
 - [How shall a link to a website be entered in an AAS, as File or as ReferenceElement object?](#id2)
-- [If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#id5)
 - [How to use physical units for quantifiable properties?](#id7)
 - [How to treat values of Properties with values in multiple languages?](#id9)
 - [How shall a document be handled which includes different content according to VDI 2770 and the related DocumentClassIDs?](#id10)
@@ -134,14 +133,6 @@ There are currently two ways to create/reference AAS:
 
 Links to websites shall be entered as File object (physical reference). ReferenceElement  objects represent logical references.
 A typical usage for logical references is in the description of a topology of the asset or „consist of” hierarchies.
-
-(Answered: 2020-08-13)
-
-**[If the same properties are used in several submodels, shall they also be entered several times or shall they be referenced?](#id5)** <a id="id5"></a><!-- ID: 5 -->
-
-Submodels shall be as independent as possible so that they can be changed and developed separately.
-Consequently, the same properties shall be copied to another submodel and references shall not be used in such case. 
-The concept description referenced in semanticId, however, should be the same.
 
 (Answered: 2020-08-13)
 
