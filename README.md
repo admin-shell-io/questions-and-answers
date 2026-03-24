@@ -254,7 +254,10 @@ For choosing an idShort value there are the following recommendations (rules and
 
 In case a submodel template specification is used as a base, the idShort defined in this submodel template shall be used.
 
-Note: the isShort does not carry any semantic meaning. For speaking names the display name shall be used.
+Note: enumeration patterns (`IdShort__00__`) or the `SMT/AllowedIdShort` qualifiers, may lead to situations where an unambigious resolution of an idShort to a submodel element is impossible. Hence, when modeling,
+these features should be used cautiously. Their necessity/usefulness is currently in considerations.
+
+Note: the idShort does not carry any semantic meaning. For speaking names the display name shall be used.
 
 (Updated: 2021-05-17)
 
