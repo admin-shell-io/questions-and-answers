@@ -249,7 +249,7 @@ Map concepts to “admin-shell.io” namespace (see [custom identifier best prac
 
 For choosing an idShort value there are the following recommendations (rules and order can be used for automatically creation of an idShort):
 
-- If an English shortname is available in the related concept description, the English shortName can be used as idShort. 
+- If an English shortName is available in the related concept description, the English shortName can be used as idShort. 
 - If there is an English preferredName available in the related concept description, this name can be converted to idShort, e.g. the preferredName “Maximum rotation speed” can be converted to “maximumRotationSpeed”.
 
 In case a submodel template specification is used as a base, the idShort defined in this submodel template shall be used.
