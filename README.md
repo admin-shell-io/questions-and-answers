@@ -83,9 +83,10 @@ Please address discussions and proposals via issues and pull requests in the git
 
 **[How to define optional and mandatory elements for a submodel of kind=Template?](#id43)** <a id="id43"></a><!-- ID: 43 -->
 
-Currently (September 2021) there is no clean solution for that. Plattform Industrie 4.0 is evaluating different modeling options.
+Please, refer to the guideline "Guideline How to Create a Submodel Templates Specification" for details to this question. The current version V1.1 of this document was published in 06/25 and can be downloaded [here:](https://industrialdigitaltwin.org/wp-content/uploads/2025/06/IDTA_How-to-write-a-SMT-v1.1.pdf).
 
-As a *temporary workaround* we propose to use the qualifier name is "Multiplier" with values "One", "ZeroToOne", "ZeroToMany", "OneToMany" as done by many practitioners defining submodel templates.
+Among others the guideline describes how to use standardized Qualifiers to denote the cardinality of elements. Optional elements have the cardinality ZeroToOne or ZeroToMany, mandatory elements have the cardinality One or OneToMany.
+Also options for either/or, initial values and other definitions are available.
 
 **[How should submodel templates (kind=Template) and submodel instances (kind=Instance) be linked together?](#idgh37)** <a id="idgh37"></a><!-- ID: gh37 -->
 
