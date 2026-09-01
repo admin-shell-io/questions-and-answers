@@ -83,27 +83,45 @@ Please address discussions and proposals via issues and pull requests in the git
 
 **[How to define optional and mandatory elements for a submodel of kind=Template?](#id43)** <a id="id43"></a><!-- ID: 43 -->
 
-Currently (September 2021) there is no clean solution for that. Plattform Industrie 4.0 is evaluating different modeling options.
+Please, refer to the guideline "Guideline How to Create a Submodel Templates Specification" for details to this question. The current version V1.1 of this document was published in 06/25 and can be downloaded [here:](https://industrialdigitaltwin.org/wp-content/uploads/2025/06/IDTA_How-to-write-a-SMT-v1.1.pdf).
 
-As a *temporary workaround* we propose to use the qualifier name is "Multiplier" with values "One", "ZeroToOne", "ZeroToMany", "OneToMany" as done by many practitioners defining submodel templates.
+Among others the guideline describes how to use standardized Qualifiers to denote the cardinality of elements.
 
 **[How should submodel templates (kind=Template) and submodel instances (kind=Instance) be linked together?](#idgh37)** <a id="idgh37"></a><!-- ID: gh37 -->
 
-The submodel template with kind=Template and the submodel instance with kind=Instance should have the same semanticID to indicate the applicability of the template on the instance. 
+The submodel with kind=Template and the submodel with kind=Instance should have the same semanticID to indicate the applicability of the template on the instance. 
+
+AdministrativeInformation has the option to denote the identifier of the template that guided the creation of the respective element in the attribute "templateId". In case of a submodel, the templateId is the identifier of the Submodel template that guided the creation of the submodel. However, for submodels this is informatory only and not relevant for validation. Here, the Submodel/semanticId shall be used as described above.
 
 **[How does the version of a submodel impact referencing of a submodel?](#idgh14)** <a id="idgh14"></a><!-- ID: gh14 -->
 
-AAS provides two approaches for versioning:
+A Submodel should be referenced using the unique identifier Submodel/id. If this id includes a version number than a change in the version will change the id and thus break the reference. It is a design decision if a break of the reference is desired or not.
 
-1) Versioning within semantic ID, e.g., for URIs "0173-xxx-zzz-zzz#version" or "https://admin-shell.io/sandbox/zvei/nameplate/0/1/Nameplate":
-* Possibly, breaking semantic changes, i.e., other meaning
-* Possibly, reverse-compatibility, e.g., extension
-* Not clarified yet which meaning "major" and "minor" parts within the semantic ID are having. Currently they correspond to the version of the submodel spec, e.g., 2.0 or 2.1.
+The version of the submodel can be denoted in AdministrativeInformation without the need to change the Submodel/id or the semanticId. The version is set by the author of the Submodel instance. The meaning of major, minor, patch are not standardized, but should follow the rules of semantic versioning.
 
-2) Changes within "administrative information" within AAS:
-* Related to content within AAS, not to its "external-interface", therefore not necessary to standardize meanings of Major/Minor now.
+If the version changes the semantic meaning of the Submodel, e.g. an updated Submodel template is upplied, than the Submodel/semantcId should be updated accordingly. The Document ["Specification of the Asset Administration Shell  - Part 1:Metamodel"](https://doi.org/10.62628/IDTA.01001-3-2) includes a chapter on "Matching Strategies for Semantic Identifiers". Here it is described how on an application level the semantic relation of two objects can be checked - with or without regard of the version information.
 
-As of now, references ignore versioning information. In case versioning is essential, the versioning information must be part of the element's ID.
+If an AAS contains two different Submodels with the same semanticId (Submodel/semanticId) they shall differ in their
+(Submodel/administration)
+
+a) version (revision and patch are ignored)
+
+or in their
+
+b) createdAt or updatedAt date
+
+or in their
+
+c) creator
+
+or in their
+
+d) supplementalSemanticId
+
+or in their
+
+e) templateId
+
 
 **[How to use isCaseOf to indicate 'alternative' semanticIDs of AAS elements?](#id46)** <a id="id46"></a><!-- ID: 46 -->
 
